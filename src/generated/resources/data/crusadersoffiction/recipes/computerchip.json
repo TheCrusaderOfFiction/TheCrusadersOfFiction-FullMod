@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "G": {
+      "item": "minecraft:green_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:lime_dye"
+    },
+    "W": {
+      "item": "crusadersoffiction:copperwire"
+    }
+  },
+  "pattern": [
+    "GLG",
+    "WCW",
+    "III"
+  ],
+  "result": {
+    "item": "crusadersoffiction:computerchip"
+  },
+  "show_notification": true
+}

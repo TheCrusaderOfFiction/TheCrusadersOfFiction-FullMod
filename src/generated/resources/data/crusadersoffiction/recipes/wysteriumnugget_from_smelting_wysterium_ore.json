@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 32000,
+  "experience": 70.0,
+  "group": "wysterium",
+  "ingredient": {
+    "item": "crusadersoffiction:wysterium_ore"
+  },
+  "result": "crusadersoffiction:wysteriumnugget"
+}

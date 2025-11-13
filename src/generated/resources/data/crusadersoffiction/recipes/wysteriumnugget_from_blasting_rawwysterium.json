@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 6400,
+  "experience": 70.0,
+  "group": "wysterium",
+  "ingredient": {
+    "item": "crusadersoffiction:rawwysterium"
+  },
+  "result": "crusadersoffiction:wysteriumnugget"
+}

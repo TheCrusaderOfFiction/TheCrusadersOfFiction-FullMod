@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rawwysterium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crusadersoffiction:rawwysterium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crusadersoffiction:wysteriumnugget_from_blasting_rawwysterium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rawwysterium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crusadersoffiction:wysteriumnugget_from_blasting_rawwysterium"
+    ]
+  },
+  "sends_telemetry_event": false
+}

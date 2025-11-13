@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_obi_rod": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crusadersoffiction:obi_rod"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crusadersoffiction:wysterium_pickaxe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wysterium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crusadersoffiction:wysterium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_obi_rod",
+      "has_wysterium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crusadersoffiction:wysterium_pickaxe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

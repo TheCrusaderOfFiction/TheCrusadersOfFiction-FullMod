@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "N": {
+      "item": "crusadersoffiction:coppernugget"
+    }
+  },
+  "pattern": [
+    "NCN"
+  ],
+  "result": {
+    "item": "crusadersoffiction:copperwire"
+  },
+  "show_notification": true
+}

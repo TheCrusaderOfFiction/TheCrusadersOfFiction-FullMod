@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "   ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "count": 2,
+    "item": "crusadersoffiction:obi_rod"
+  },
+  "show_notification": true
+}
