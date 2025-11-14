@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ModToolTiers {
     public static final Tier WYSTERIUM = TierSortingRegistry.registerTier(
-            new ForgeTier(5,20000,5f,10f,1,
+            new ForgeTier(5,20000,5f,5f,1,
                     ModTags.Blocks.NEEDS_WYSTERIUM_TOOL, () -> Ingredient.of(ModItem.WYSTERIUM.get())),
             new ResourceLocation(CrusadersOfFiction.MOD_ID, "wysterium"), List.of(Tiers.NETHERITE), List.of());
 }

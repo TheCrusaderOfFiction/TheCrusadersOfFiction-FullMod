@@ -20,7 +20,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItem.WYSTERIUM);
         simpleItem(ModItem.RAWWYSTERIUM);
         simpleItem(ModItem.WYSTERIUMNUGGET);
+        handheldItem(ModItem.WYSTERIUM_SWORD);
         handheldItem(ModItem.WYSTERIUM_PICKAXE);
+        handheldItem(ModItem.WYSTERIUM_AXE);
+        handheldItem(ModItem.WYSTERIUM_SHOVEL);
+        handheldItem(ModItem.WYSTERIUM_HOE);
 
         simpleItem(ModItem.OBI_ROD);
         simpleItem(ModItem.BLUESHARD);

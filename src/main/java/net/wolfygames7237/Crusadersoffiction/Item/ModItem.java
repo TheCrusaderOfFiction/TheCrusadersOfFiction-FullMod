@@ -51,15 +51,15 @@ public class ModItem {
             () ->new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> WYSTERIUM_SWORD = ITEMS.register( "wysterium_sword",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 7, 20, new Item.Properties()));
+            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 10, 30, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_PICKAXE = ITEMS.register( "wysterium_pickaxe",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 7, 20, new Item.Properties()));
+            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 5, 20, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_AXE = ITEMS.register( "wysterium_axe",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 7, 20, new Item.Properties()));
+            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 12, 20, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_SHOVEL = ITEMS.register( "wysterium_shovel",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 7, 20, new Item.Properties()));
+            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 2, 20, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_HOE = ITEMS.register( "wysterium_hoe",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 7, 20, new Item.Properties()));
+            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 0, 20, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {
