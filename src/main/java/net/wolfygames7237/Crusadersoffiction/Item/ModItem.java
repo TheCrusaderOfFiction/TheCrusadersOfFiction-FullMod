@@ -1,5 +1,6 @@
 package net.wolfygames7237.Crusadersoffiction.Item;
 
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.PickaxeItem;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 import net.minecraft.world.item.Item;
@@ -7,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.wolfygames7237.Crusadersoffiction.Item.custom.ModArmorItem;
 
 public class ModItem {
     public static final DeferredRegister<Item> ITEMS =
@@ -60,6 +62,15 @@ public class ModItem {
             () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 2, 20, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_HOE = ITEMS.register( "wysterium_hoe",
             () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 0, 20, new Item.Properties()));
+
+    public static final RegistryObject<Item> WYSTERIUM_HELMET = ITEMS.register("wysterium_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> WYSTERIUM_CHESTPLATE = ITEMS.register("wysterium_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> WYSTERIUM_LEGGINGS = ITEMS.register("wysterium_leggings",
+            () -> new ArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> WYSTERIUM_BOOTS = ITEMS.register("wysterium_boots",
+            () -> new ArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

@@ -22,10 +22,9 @@ import org.slf4j.Logger;
 @Mod(CrusadersOfFiction.MOD_ID)
 public class CrusadersOfFiction
 {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "crusadersoffiction";
-
     private static final Logger LOGGER = LogUtils.getLogger();
+
 
     public CrusadersOfFiction(FMLJavaModLoadingContext context)
     {
@@ -43,12 +42,11 @@ public class CrusadersOfFiction
 
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-
     private void commonSetup(final FMLCommonSetupEvent event)
     {
 
     }
-
+    
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
     if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {

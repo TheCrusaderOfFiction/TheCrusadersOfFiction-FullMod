@@ -34,6 +34,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.WYSTERIUM_AXE.get());
                         output.accept(ModItem.WYSTERIUM_SHOVEL.get());
                         output.accept(ModItem.WYSTERIUM_HOE.get());
+                        output.accept(ModItem.WYSTERIUM_HELMET.get());
+                        output.accept(ModItem.WYSTERIUM_CHESTPLATE.get());
+                        output.accept(ModItem.WYSTERIUM_LEGGINGS.get());
+                        output.accept(ModItem.WYSTERIUM_BOOTS.get());
                         output.accept(ModItem.OBI_ROD.get());
                         output.accept(ModItem.SOULESSANCE.get());
                         output.accept(ModItem.RAINBOWESSANCE.get());

@@ -3,9 +3,11 @@ package net.wolfygames7237.Crusadersoffiction.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
+import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,6 +20,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItem.WYSTERIUM_HELMET.get(),
+                        ModItem.WYSTERIUM_CHESTPLATE.get(),
+                        ModItem.WYSTERIUM_LEGGINGS.get(),
+                        ModItem.WYSTERIUM_BOOTS.get());
     }
 }
