@@ -2,23 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": {
-      "item": "crusadersoffiction:computerchip"
-    },
-    "L": {
-      "item": "minecraft:lapis_lazuli"
+    "S": {
+      "item": "crusadersoffiction:obi_rod"
     },
     "W": {
       "item": "crusadersoffiction:wysterium"
     }
   },
   "pattern": [
-    "LWL",
-    "WCW",
-    "LWL"
+    " W ",
+    " S ",
+    " S "
   ],
   "result": {
-    "item": "minecraft:copper_ingot"
+    "item": "crusadersoffiction:wysterium_shovel"
   },
   "show_notification": true
 }

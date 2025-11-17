@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_coppernugget": {
+    "has_obi_rod": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crusadersoffiction:coppernugget"
+              "crusadersoffiction:obi_rod"
             ]
           }
         ]
@@ -15,20 +15,33 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:nugget"
+        "recipe": "crusadersoffiction:wysterium_sword"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wysterium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crusadersoffiction:wysterium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
-      "has_coppernugget",
+      "has_obi_rod",
+      "has_wysterium",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:nugget"
+      "crusadersoffiction:wysterium_sword"
     ]
   },
   "sends_telemetry_event": false

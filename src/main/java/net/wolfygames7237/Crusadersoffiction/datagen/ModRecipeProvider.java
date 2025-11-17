@@ -1,11 +1,13 @@
 package net.wolfygames7237.Crusadersoffiction.datagen;
 
+import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -13,6 +15,8 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
+import net.minecraftforge.common.data.ExistingFileHelper;
+
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -61,7 +65,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('L', Items.LIME_DYE)
                 .unlockedBy(getHasName(ModItem.COPPERWIRE.get()), has(ModItem.COPPERWIRE.get()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.COPPER_INGOT)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.BLUESHARD.get())
                 .pattern("LWL")
                 .pattern("WCW")
                 .pattern("LWL")
@@ -69,7 +73,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('W', ModItem.WYSTERIUM.get())
                 .define('C', ModItem.COMPUTERCHIP.get())
                 .unlockedBy(getHasName(ModItem.COPPERNUGGET.get()), has(ModItem.COPPERNUGGET.get()))
-                .save(pWriter, "nugget");
+                .save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.BLUEARMORSHARD.get())
                 .pattern("SSS")
                 .pattern("SSS")
@@ -91,7 +95,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItem.WYSTERIUM.get())
                 .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.OBI_ROD.get(),2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.OBI_ROD.get(), 2)
                 .pattern("   ")
                 .pattern(" S ")
                 .pattern(" S ")
@@ -145,6 +149,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
 
 
+
+
+        removeRecipe(pWriter, new ResourceLocation("minecraft", "crafting_table"));
+        removeRecipe(pWriter, new ResourceLocation("minecraft", "iron_axe"));
+
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItem.COPPERNUGGET.get(), 9)
                 .requires(Items.COPPER_INGOT)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
@@ -153,7 +163,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.WYSTERIUM_BLOCK.get())
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter, "wysterium_from_block");
+
     }
+
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
@@ -170,5 +182,34 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(pFinishedRecipeConsumer,  CrusadersOfFiction.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
+    }
+
+    private void removeRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation recipeId) {
+        consumer.accept(new FinishedRecipe() {
+            @Override
+            public void serializeRecipeData(com.google.gson.JsonObject json) {
+                // No data — this marks it for removal
+            }
+
+            @Override
+            public ResourceLocation getId() {
+                return recipeId;
+            }
+
+            @Override
+            public RecipeSerializer<?> getType() {
+                return RecipeSerializer.SHAPELESS_RECIPE; // Placeholder
+            }
+
+            @Override
+            public JsonObject serializeAdvancement() {
+                return null;
+            }
+
+            @Override
+            public ResourceLocation getAdvancementId() {
+                return null;
+            }
+        });
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "crusadersoffiction:obi_rod"
+    },
+    "W": {
+      "item": "crusadersoffiction:wysterium"
+    }
+  },
+  "pattern": [
+    "WW ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "crusadersoffiction:wysterium_hoe"
+  },
+  "show_notification": true
+}
