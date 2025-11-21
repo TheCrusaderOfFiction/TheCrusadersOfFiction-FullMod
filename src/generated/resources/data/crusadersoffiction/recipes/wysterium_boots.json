@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "W": {
+      "item": "crusadersoffiction:wysterium"
+    }
+  },
+  "pattern": [
+    "W W",
+    "W W"
+  ],
+  "result": {
+    "item": "crusadersoffiction:wysterium_boots"
+  },
+  "show_notification": true
+}

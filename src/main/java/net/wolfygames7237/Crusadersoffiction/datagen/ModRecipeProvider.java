@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -148,11 +149,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
                 .save(pWriter);
 
-
-
-
-        removeRecipe(pWriter, new ResourceLocation("minecraft", "crafting_table"));
-        removeRecipe(pWriter, new ResourceLocation("minecraft", "iron_axe"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.WYSTERIUM_CHESTPLATE.get())
+                .pattern("W W")
+                .pattern("WWW")
+                .pattern("WWW")
+                .define('W', ModItem.WYSTERIUM.get())
+                .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.WYSTERIUM_LEGGINGS.get())
+                .pattern("WWW")
+                .pattern("W W")
+                .pattern("W W")
+                .define('W', ModItem.WYSTERIUM.get())
+                .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.WYSTERIUM_BOOTS.get())
+                .pattern("W W")
+                .pattern("W W")
+                .define('W', ModItem.WYSTERIUM.get())
+                .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
+                .save(pWriter);
 
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItem.COPPERNUGGET.get(), 9)
@@ -163,6 +179,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.WYSTERIUM_BLOCK.get())
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter, "wysterium_from_block");
+
 
     }
 
@@ -198,7 +215,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
             @Override
             public RecipeSerializer<?> getType() {
-                return RecipeSerializer.SHAPELESS_RECIPE; // Placeholder
+                return null; // Placeholder
             }
 
             @Override
