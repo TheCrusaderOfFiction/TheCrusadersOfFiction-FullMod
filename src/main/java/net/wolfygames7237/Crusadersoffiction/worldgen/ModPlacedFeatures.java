@@ -27,8 +27,8 @@ public class ModPlacedFeatures {
                 ModOrePlacement.commonOrePlacement(1,
                         HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.absolute(30))));
         register(context, END_WYSTERIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_WYSTERIUM_ORE_KEY),
-                ModOrePlacement.rareOrePlacement(1,
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(100))));
+                ModOrePlacement.rareOrePlacement(3,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(50))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
