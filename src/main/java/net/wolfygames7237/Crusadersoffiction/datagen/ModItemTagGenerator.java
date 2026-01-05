@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
+import net.wolfygames7237.Crusadersoffiction.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -25,5 +26,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItem.WYSTERIUM_CHESTPLATE.get(),
                         ModItem.WYSTERIUM_LEGGINGS.get(),
                         ModItem.WYSTERIUM_BOOTS.get());
+
+        this.tag(ModTags.Blocks.Items.HAMMER)
+                .add(ModItem.COPPER_HAMMER.get(),
+                        ModItem.IRON_HAMMER.get());
+
+
     }
 }

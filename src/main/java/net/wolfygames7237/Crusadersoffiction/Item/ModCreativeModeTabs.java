@@ -43,7 +43,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.RAINBOWESSANCE.get());
                         output.accept(ModItem.VOIDESSANCE.get());
 
+                        output.accept(ModBlocks.FORGE.get());
 
+                        output.accept(ModItem.COPPER_HAMMER.get());
+                        output.accept(ModItem.IRON_HAMMER.get());
                     })
                     .build());
 

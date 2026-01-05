@@ -1,0 +1,29 @@
+{
+  "type": "crusadersoffiction:forge",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {},
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "crusadersoffiction:copper_hammer"
+    }
+  ],
+  "output": {
+    "item": "minecraft:iron_axe"
+  }
+}

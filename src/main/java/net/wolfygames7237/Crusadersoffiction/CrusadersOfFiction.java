@@ -1,8 +1,16 @@
 package net.wolfygames7237.Crusadersoffiction;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
+import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
@@ -21,9 +29,17 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.wolfygames7237.Crusadersoffiction.entity.ModBlockEntities;
 import net.wolfygames7237.Crusadersoffiction.loot.ModLootModifiers;
+import net.wolfygames7237.Crusadersoffiction.recipe.ModRecipes;
+import net.wolfygames7237.Crusadersoffiction.screen.ForgeScreen;
+import net.wolfygames7237.Crusadersoffiction.screen.ModMenuTypes;
 import org.slf4j.Logger;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -37,6 +53,20 @@ public class CrusadersOfFiction
     public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("cursedfate", "cursedfate"), () -> "1", "1"::equals, "1"::equals);
     private static int messageID = 0;
 
+    private static final Set<ResourceLocation> BLOCKED_RECIPES = Set.of(
+            new ResourceLocation("minecraft", "diamond_sword"),
+            new ResourceLocation("minecraft", "diamond_axe"),
+            new ResourceLocation("minecraft", "diamond_pickaxe"),
+            new ResourceLocation("minecraft", "diamond_hoe"),
+            new ResourceLocation("minecraft", "diamond_shovel"),
+
+            new ResourceLocation("minecraft", "iron_sword"),
+            new ResourceLocation("minecraft", "iron_axe"),
+            new ResourceLocation("minecraft", "iron_pickaxe"),
+            new ResourceLocation("minecraft", "iron_hoe"),
+            new ResourceLocation("minecraft", "iron_shovel")
+    );
+
     public CrusadersOfFiction(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
@@ -45,7 +75,9 @@ public class CrusadersOfFiction
         ModItem.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModLootModifiers.register(modEventBus);
-
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -77,6 +109,53 @@ public class CrusadersOfFiction
 
     }
 
+    @SubscribeEvent
+    public void onAddReloadListener(AddReloadListenerEvent event) {
+        event.addListener(new SimplePreparableReloadListener<Void>() {
+            @Override
+            protected Void prepare(ResourceManager resourceManager, ProfilerFiller profiler) {
+                return null;
+            }
+
+            @Override
+            protected void apply(Void unused, ResourceManager resourceManager, ProfilerFiller profiler) {
+                RecipeManager recipeManager = event.getServerResources().getRecipeManager();
+
+                try {
+                    // Access the private "recipes" field: Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>>
+                    Field recipesField = RecipeManager.class.getDeclaredField("recipes");
+                    recipesField.setAccessible(true);
+
+                    Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>> recipes =
+                            (Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>>) recipesField.get(recipeManager);
+
+                    // Create a new filtered copy
+                    Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>> filtered = new HashMap<>();
+                    int removedCount = 0;
+
+                    for (Map.Entry<RecipeType<?>, Map<ResourceLocation, Recipe<?>>> typeEntry : recipes.entrySet()) {
+                        Map<ResourceLocation, Recipe<?>> innerMap = new HashMap<>(typeEntry.getValue());
+                        for (ResourceLocation blocked : BLOCKED_RECIPES) {
+                            if (innerMap.remove(blocked) != null) {
+                                removedCount++;
+                                LOGGER.info("Removed recipe: {}", blocked);
+                            }
+                        }
+                        filtered.put(typeEntry.getKey(), innerMap);
+                    }
+
+                    LOGGER.info("Total recipes removed: {}", removedCount);
+
+                    // Replace the original map
+                    recipesField.set(recipeManager, filtered);
+
+                } catch (Exception e) {
+                    LOGGER.error("Failed to modify RecipeManager recipes", e);
+                }
+            }
+        });
+    }
+
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
@@ -84,6 +163,11 @@ public class CrusadersOfFiction
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            event.enqueueWork(() -> {
+
+                MenuScreens.register(ModMenuTypes.FORGE_MENU.get(), ForgeScreen::new);
+            });
         }
     }
+
 }

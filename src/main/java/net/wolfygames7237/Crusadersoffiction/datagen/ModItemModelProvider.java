@@ -8,13 +8,17 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
+import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
+
 
 import java.util.LinkedHashMap;
 
@@ -62,7 +66,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItem.WYSTERIUM_CHESTPLATE);
         trimmedArmorItem(ModItem.WYSTERIUM_LEGGINGS);
         trimmedArmorItem(ModItem.WYSTERIUM_BOOTS);
+
+        complexBlock(ModBlocks.FORGE.get());
+
+        handheldItem(ModItem.COPPER_HAMMER);
+        handheldItem(ModItem.IRON_HAMMER);
     }
+
+    private ItemModelBuilder complexBlock(Block block) {
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(CrusadersOfFiction.MOD_ID,
+                "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
+    }
+
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
         final String MOD_ID = CrusadersOfFiction.MOD_ID; // Change this to your mod id
 

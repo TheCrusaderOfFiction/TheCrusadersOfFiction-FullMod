@@ -52,6 +52,11 @@ public class ModItem {
     public static final RegistryObject<Item> OBI_ROD = ITEMS.register( "obi_rod",
             () ->new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> COPPER_HAMMER = ITEMS.register( "copper_hammer",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register( "iron_hammer",
+            () ->new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> WYSTERIUM_SWORD = ITEMS.register( "wysterium_sword",
             () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 10, 30, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_PICKAXE = ITEMS.register( "wysterium_pickaxe",

@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -16,7 +16,7 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.wolfygames7237.Crusadersoffiction.datagen.custom.ForgeRecipeBuilder;
 
 
 import java.util.List;
@@ -169,7 +169,34 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('W', ModItem.WYSTERIUM.get())
                 .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.FORGE.get())
+                .pattern("DCD")
+                .pattern("SGS")
+                .pattern("IWI")
+                .define('D', Blocks.COBBLED_DEEPSLATE)
+                .define('C', Blocks.COPPER_BLOCK)
+                .define('S', Blocks.STONE)
+                .define('G', Blocks.GLASS)
+                .define('I', Items.IRON_INGOT)
+                .define('W', ItemTags.LOGS)
+                .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
+                .save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.COPPER_HAMMER.get(), 8)
+                .pattern("CCC")
+                .pattern(" S ")
+                .define('S', Items.STICK)
+                .define('C', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.IRON_HAMMER.get(), 8)
+                .pattern(" CC")
+                .pattern(" SC")
+                .pattern("S  ")
+                .define('S', Items.STICK)
+                .define('C', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItem.COPPERNUGGET.get(), 9)
                 .requires(Items.COPPER_INGOT)
@@ -180,7 +207,65 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter, "wysterium_from_block");
 
+        new ForgeRecipeBuilder(Items.IRON_PICKAXE, 1)
+                .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
+                .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
+                .setIngredient(2, Ingredient.of(Items.IRON_INGOT))
+                // ... other slots ...
+                .setFuel(Ingredient.of(Items.COAL))
+                .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_pickaxe_top_forge"));
 
+        new ForgeRecipeBuilder(Items.IRON_SHOVEL, 1)
+                .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
+                // ... other slots ...
+                .setFuel(Ingredient.of(Items.COAL))
+                .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_shovel_2_forge"));
+        new ForgeRecipeBuilder(Items.IRON_SHOVEL, 1)
+                .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
+                // ... other slots ...
+                .setFuel(Ingredient.of(Items.COAL))
+                .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_shovel_1_forge"));
+
+        new ForgeRecipeBuilder(Items.IRON_HOE, 1)
+                .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
+                .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
+                // ... other slots ...
+                .setFuel(Ingredient.of(Items.COAL))
+                .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_hoe_top_left_forge"));
+
+        new ForgeRecipeBuilder(Items.IRON_AXE, 1)
+                .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
+                .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
+                .setIngredient(3, Ingredient.of(Items.IRON_INGOT))
+                // ... other slots ...
+                .setFuel(Ingredient.of(Items.COAL))
+                .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_axe_top_left_forge"));
+
+        new ForgeRecipeBuilder(Items.IRON_SWORD, 1)
+                .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
+                .setIngredient(3, Ingredient.of(Items.IRON_INGOT))
+                // ... other slots ...
+                .setFuel(Ingredient.of(Items.COAL))
+                .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_sword_top_left_forge"));
+
+
+
+
+    }
+    private static ResourceLocation recipes(String name) {
+        return new ResourceLocation("crusadersoffiction", name);
     }
 
 

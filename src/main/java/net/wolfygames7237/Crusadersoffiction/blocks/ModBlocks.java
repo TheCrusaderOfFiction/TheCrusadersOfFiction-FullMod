@@ -13,6 +13,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.wolfygames7237.Crusadersoffiction.blocks.custom.Forge;
 
 import java.util.function.Supplier;
 
@@ -27,6 +28,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> WYSTERIUM_BLOCK = registerBlock("wysterium_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
                     .strength(50).explosionResistance(1500).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> FORGE = registerBlock("forge",
+            () -> new Forge(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

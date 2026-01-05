@@ -24,6 +24,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
        this.dropSelf(ModBlocks.WYSTERIUM_BLOCK.get());
+        this.dropSelf(ModBlocks.FORGE.get());
 
 
         this.add(ModBlocks.WYSTERIUM_ORE.get(),
