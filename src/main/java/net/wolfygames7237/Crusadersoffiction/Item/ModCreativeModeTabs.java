@@ -46,7 +46,8 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
-    public static final RegistryObject<CreativeModeTab> Crusaders_progress = CREATIVE_MODE_TABS.register("crusader_progress",
+
+    public static final RegistryObject<CreativeModeTab> Crusaders_progress = CREATIVE_MODE_TABS.register("crusaders_progress",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.FORGE.get()))
                     .title(Component.translatable("creativetab.crusader_mod"))
                     .displayItems((itemDisplayParameters, output) -> {
