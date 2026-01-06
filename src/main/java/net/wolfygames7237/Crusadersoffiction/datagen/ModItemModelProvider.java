@@ -71,6 +71,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldItem(ModItem.COPPER_HAMMER);
         handheldItem(ModItem.IRON_HAMMER);
+
+        handheldItem(ModItem.IRON_SWORD_BLADE);
+        handheldItem(ModItem.IRON_PICKAXE_HEAD);
+        handheldItem(ModItem.IRON_AXE_HEAD);
+        handheldItem(ModItem.IRON_SHOVEL_BLADE);
+        handheldItem(ModItem.IRON_HOE_BLADE);
     }
 
     private ItemModelBuilder complexBlock(Block block) {
