@@ -43,10 +43,25 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.RAINBOWESSANCE.get());
                         output.accept(ModItem.VOIDESSANCE.get());
 
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> Crusaders_progress = CREATIVE_MODE_TABS.register("crusader_mod",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.FORGE.get()))
+                    .title(Component.translatable("creativetab.crusader_mod"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
                         output.accept(ModBlocks.FORGE.get());
 
                         output.accept(ModItem.COPPER_HAMMER.get());
                         output.accept(ModItem.IRON_HAMMER.get());
+
+                        output.accept(ModItem.IRON_SWORD_BLADE.get());
+                        output.accept(ModItem.IRON_AXE_HEAD.get());
+                        output.accept(ModItem.IRON_PICKAXE_HEAD.get());
+                        output.accept(ModItem.IRON_SHOVEL_BLADE.get());
+                        output.accept(ModItem.IRON_SWORD_BLADE.get());
+
                     })
                     .build());
 
