@@ -49,7 +49,7 @@ public class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> Crusaders_progress = CREATIVE_MODE_TABS.register("crusaders_progress",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.FORGE.get()))
-                    .title(Component.translatable("creativetab.crusader_mod"))
+                    .title(Component.translatable("creativetab.crusader_progress"))
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModBlocks.FORGE.get());
@@ -61,7 +61,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.IRON_AXE_HEAD.get());
                         output.accept(ModItem.IRON_PICKAXE_HEAD.get());
                         output.accept(ModItem.IRON_SHOVEL_BLADE.get());
-                        output.accept(ModItem.IRON_SWORD_BLADE.get());
+                        output.accept(ModItem.IRON_HOE_BLADE.get());
 
                     })
                     .build());
