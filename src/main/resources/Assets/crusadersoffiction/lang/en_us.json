@@ -27,6 +27,12 @@
   "item.crusadersoffiction.copper_hammer": "Copper Hammer",
   "item.crusadersoffiction.iron_hammer": "Iron Hammer",
 
+  "item.crusadersoffiction.iron_sword_blade": "Iron Sword Blade",
+  "item.crusadersoffiction.iron_hoe_blade": "Iron Hoe Blade",
+  "item.crusadersoffiction.iron_shovel_blade": "Iron Shovel Blade",
+  "item.crusadersoffiction.iron_axe_head": "Iron Axe Head",
+  "item.crusadersoffiction.iron_pickaxe_head": "Iron Pickaxe Head",
+
   "block.crusadersoffiction.wysterium_ore": "Wysterium Ore",
   "block.crusadersoffiction.wysterium_block": "Wysterium Block",
   "block.crusadersoffiction.forge": "Forge",

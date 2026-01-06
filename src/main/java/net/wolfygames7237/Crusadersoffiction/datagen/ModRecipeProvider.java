@@ -207,7 +207,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter, "wysterium_from_block");
 
-        new ForgeRecipeBuilder(Items.IRON_PICKAXE, 1)
+        new ForgeRecipeBuilder(ModItem.IRON_PICKAXE_HEAD.get(), 1)
                 .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
                 .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
                 .setIngredient(2, Ingredient.of(Items.IRON_INGOT))
@@ -217,14 +217,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_iron", has(Items.IRON_INGOT))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_pickaxe_top_forge"));
 
-        new ForgeRecipeBuilder(Items.IRON_SHOVEL, 1)
+        new ForgeRecipeBuilder(ModItem.IRON_SHOVEL_BLADE.get(), 1)
                 .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
                 // ... other slots ...
                 .setFuel(Ingredient.of(Items.COAL))
                 .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
                 .unlockedBy("has_iron", has(Items.IRON_INGOT))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_shovel_2_forge"));
-        new ForgeRecipeBuilder(Items.IRON_SHOVEL, 1)
+        new ForgeRecipeBuilder(ModItem.IRON_SHOVEL_BLADE.get(), 1)
                 .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
                 // ... other slots ...
                 .setFuel(Ingredient.of(Items.COAL))
@@ -232,7 +232,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_iron", has(Items.IRON_INGOT))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_shovel_1_forge"));
 
-        new ForgeRecipeBuilder(Items.IRON_HOE, 1)
+        new ForgeRecipeBuilder(ModItem.IRON_HOE_BLADE.get(), 1)
                 .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
                 .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
                 // ... other slots ...
@@ -241,7 +241,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_iron", has(Items.IRON_INGOT))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_hoe_top_left_forge"));
 
-        new ForgeRecipeBuilder(Items.IRON_AXE, 1)
+        new ForgeRecipeBuilder(ModItem.IRON_AXE_HEAD.get(), 1)
                 .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
                 .setIngredient(1, Ingredient.of(Items.IRON_INGOT))
                 .setIngredient(3, Ingredient.of(Items.IRON_INGOT))
@@ -251,7 +251,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_iron", has(Items.IRON_INGOT))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_axe_top_left_forge"));
 
-        new ForgeRecipeBuilder(Items.IRON_SWORD, 1)
+        new ForgeRecipeBuilder(ModItem.IRON_SWORD_BLADE.get(), 1)
                 .setIngredient(0, Ingredient.of(Items.IRON_INGOT))
                 .setIngredient(3, Ingredient.of(Items.IRON_INGOT))
                 // ... other slots ...

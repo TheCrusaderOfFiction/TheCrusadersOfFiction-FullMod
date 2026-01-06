@@ -57,6 +57,17 @@ public class ModItem {
     public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register( "iron_hammer",
             () ->new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> IRON_SWORD_BLADE = ITEMS.register( "iron_sword_blade",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_HOE_BLADE = ITEMS.register( "iron_hoe_blade",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_SHOVEL_BLADE = ITEMS.register( "iron_shovel_blade",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_AXE_HEAD = ITEMS.register( "iron_axe_head",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> IRON_PICKAXE_HEAD = ITEMS.register( "iron_pickaxe_head",
+            () ->new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> WYSTERIUM_SWORD = ITEMS.register( "wysterium_sword",
             () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 10, 30, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_PICKAXE = ITEMS.register( "wysterium_pickaxe",

@@ -1,10 +1,13 @@
-// 1.20.1	2025-11-16T10:11:53.4690495	Item Models: crusadersoffiction
+// 1.20.1	2026-01-02T23:57:28.2531568	Item Models: crusadersoffiction
 fae171fe160a1aa20485d3771aba09c08db5b891 assets/crusadersoffiction/models/item/bluearmorcasing.json
 73177baea1af2921bf3a29124e728b5cf75957f0 assets/crusadersoffiction/models/item/bluearmorshard.json
 cd3280d83419fcb387f6889fbb3944969c12f9e6 assets/crusadersoffiction/models/item/blueshardh.json
 3aca7844102fb29c86bf45e361e938a14ec01e0d assets/crusadersoffiction/models/item/computerchip.json
 2d7653b5a1349d37fab99f0e77236e8d51e95c9f assets/crusadersoffiction/models/item/coppernugget.json
 67694b7e288d23a8570cdede14f9d1dd7a89b3f6 assets/crusadersoffiction/models/item/copperwire.json
+8ac3c75ede42b7d62ad5f72019009271da65ded4 assets/crusadersoffiction/models/item/copper_hammer.json
+4b620b64e3b7c10dfd9f1d569c64d838bdb71e33 assets/crusadersoffiction/models/item/forge.json
+5e2c8c2224d84b3a0417215535c8fe71f046fc32 assets/crusadersoffiction/models/item/iron_hammer.json
 7a5bbea5ee4da5245b649e78dda0ef47ee962cb8 assets/crusadersoffiction/models/item/obi_rod.json
 077d3426e15644cdf0526441fc42529b1b10f27c assets/crusadersoffiction/models/item/rainbowessance.json
 d466be9078638d07c027a3ad8006fb78fe147dd0 assets/crusadersoffiction/models/item/rawwysterium.json
