@@ -31,6 +31,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItem.COPPER_HAMMER.get(),
                         ModItem.IRON_HAMMER.get());
 
+        this.tag(ItemTags.AXES)
+                .add(ModItem.ROCK_HATCHET.get());
+
 
     }
 }

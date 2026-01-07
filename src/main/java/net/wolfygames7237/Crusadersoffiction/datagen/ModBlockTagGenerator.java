@@ -3,6 +3,7 @@ package net.wolfygames7237.Crusadersoffiction.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -24,10 +25,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.WYSTERIUM_ORE.get(),
-                        (ModBlocks.WYSTERIUM_BLOCK.get()),
-                (Blocks.BEDROCK)
+                        ModBlocks.WYSTERIUM_BLOCK.get(),
+                        Blocks.BEDROCK
                         );
 
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.LOGS);
+
+        this.tag(BlockTags.NEEDS_STONE_TOOL);
+
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.FORGE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.WYSTERIUM_BLOCK.get());

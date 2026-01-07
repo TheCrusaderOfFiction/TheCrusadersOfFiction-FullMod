@@ -33,9 +33,20 @@
   "item.crusadersoffiction.iron_axe_head": "Iron Axe Head",
   "item.crusadersoffiction.iron_pickaxe_head": "Iron Pickaxe Head",
 
+  "item.crusadersoffiction.diamond_sword_blade": "Diamond Sword Blade",
+  "item.crusadersoffiction.diamond_hoe_blade": "Diamond Hoe Blade",
+  "item.crusadersoffiction.diamond_shovel_blade": "Diamond Shovel Blade",
+  "item.crusadersoffiction.diamond_axe_head": "Diamond Axe Head",
+  "item.crusadersoffiction.diamond_pickaxe_head": "Diamond Pickaxe Head",
+
+  "item.crusadersoffiction.rock": "Rock",
+  "item.crusadersoffiction.rock_hatchet": "Rock Hatchet",
+  "item.crusadersoffiction.fiber": "fiber",
+
   "block.crusadersoffiction.wysterium_ore": "Wysterium Ore",
   "block.crusadersoffiction.wysterium_block": "Wysterium Block",
   "block.crusadersoffiction.forge": "Forge",
+  "block.crusadersoffiction.charged_coal_block": "Forge",
 
   "creativetab.crusader_mod": "Crusaders Mod",
   "creativetab.crusader_progress": "Crusaders: Progress Reimagined"

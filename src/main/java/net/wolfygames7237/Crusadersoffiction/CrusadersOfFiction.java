@@ -2,18 +2,27 @@ package net.wolfygames7237.Crusadersoffiction;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.wolfygames7237.Crusadersoffiction.Item.ModCreativeModeTabs;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
@@ -88,7 +97,19 @@ public class CrusadersOfFiction
     }
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            for (Block block : ForgeRegistries.BLOCKS) {
+                if (block.defaultBlockState().is(BlockTags.LOGS)) {
+                    // Since AT made 'properties' public:
+                    block.properties.requiresCorrectToolForDrops();
 
+                    // FORCE the internal field 'requiresCorrectToolForDrops' to true
+                    // In some versions, the method above only sets a builder flag.
+                    // You may need to use your AT for the field 'hasCollision' etc. if needed,
+                    // but for drops, you usually need a Global Loot Modifier (GLM) for vanilla blocks.
+                }
+            }
+        });
     }
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
         PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);

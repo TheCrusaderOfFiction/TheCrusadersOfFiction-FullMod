@@ -1,5 +1,6 @@
 package net.wolfygames7237.Crusadersoffiction.blocks;
 
+import net.minecraft.world.level.block.SoundType;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -28,6 +29,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> WYSTERIUM_BLOCK = registerBlock("wysterium_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
                     .strength(50).explosionResistance(1500).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> CHARGED_COAL_BLOCK = registerBlock("charged_coal_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK).sound(SoundType.CANDLE)));
 
     public static final RegistryObject<Block> FORGE = registerBlock("forge",
             () -> new Forge(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));

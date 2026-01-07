@@ -67,7 +67,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItem.WYSTERIUM_LEGGINGS);
         trimmedArmorItem(ModItem.WYSTERIUM_BOOTS);
 
+
         complexBlock(ModBlocks.FORGE.get());
+        simpleItem(ModItem.FIBER);
 
         handheldItem(ModItem.COPPER_HAMMER);
         handheldItem(ModItem.IRON_HAMMER);
@@ -77,6 +79,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItem.IRON_AXE_HEAD);
         handheldItem(ModItem.IRON_SHOVEL_BLADE);
         handheldItem(ModItem.IRON_HOE_BLADE);
+
+        handheldItem(ModItem.DIAMOND_SWORD_BLADE);
+        handheldItem(ModItem.DIAMOND_PICKAXE_HEAD);
+        handheldItem(ModItem.DIAMOND_AXE_HEAD);
+        handheldItem(ModItem.DIAMOND_SHOVEL_BLADE);
+        handheldItem(ModItem.DIAMOND_HOE_BLADE);
+
+        handheldItem(ModItem.ROCK_HATCHET);
+        handheldItem(ModItem.ROCK);
     }
 
     private ItemModelBuilder complexBlock(Block block) {

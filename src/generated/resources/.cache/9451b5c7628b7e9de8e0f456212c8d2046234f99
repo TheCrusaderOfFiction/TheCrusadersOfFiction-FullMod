@@ -1,5 +1,8 @@
-// 1.20.1	2025-11-13T17:58:37.039694	Tags for minecraft:block mod id crusadersoffiction
+// 1.20.1	2026-01-06T17:07:55.4863974	Tags for minecraft:block mod id crusadersoffiction
 cfab2ab481bf476a645d326b87627918009b9e50 data/crusadersoffiction/tags/blocks/needs_wysterium_tool.json
 8bda87ce0754d5610ce1ec3c635ed283149dc187 data/forge/tags/blocks/needs_netherite_tool.json
+b147fcff5c0b4d72df1cb7809b063b2562180832 data/minecraft/tags/blocks/mineable/axe.json
 272b21e156c8b0a6ba43f44ee850382952a5b501 data/minecraft/tags/blocks/mineable/pickaxe.json
 09f06f84817e32b6cb455c2c1298a415351a0225 data/minecraft/tags/blocks/needs_diamond_tool.json
+51ccebeba7c35baee36be4a2bfdb3fe05d36ecb8 data/minecraft/tags/blocks/needs_iron_tool.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_stone_tool.json

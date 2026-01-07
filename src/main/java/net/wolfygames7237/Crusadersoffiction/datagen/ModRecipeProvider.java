@@ -181,6 +181,106 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('W', ItemTags.LOGS)
                 .unlockedBy(getHasName(ModItem.WYSTERIUM.get()), has(ModItem.WYSTERIUM.get()))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.ROCK_HATCHET.get())
+                .pattern("FR")
+                .pattern("S ")
+                .define('F', ModItem.FIBER.get())
+                .define('R', ModItem.ROCK.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(ModItem.ROCK.get()), has(ModItem.ROCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_AXE)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.IRON_AXE_HEAD.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_PICKAXE)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.IRON_PICKAXE_HEAD.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_SWORD)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.IRON_SWORD_BLADE.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_SHOVEL)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.IRON_SHOVEL_BLADE.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_HOE)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.IRON_HOE_BLADE.get())
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_AXE)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.DIAMOND_AXE_HEAD.get())
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_PICKAXE)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.DIAMOND_PICKAXE_HEAD.get())
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_SWORD)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.DIAMOND_SWORD_BLADE.get())
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.DIAMOND_SHOVEL_BLADE.get())
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_HOE)
+                .pattern("H")
+                .pattern("T")
+                .pattern("S")
+                .define('S', Items.STICK)
+                .define('T', Items.STRING)
+                .define('H', ModItem.DIAMOND_HOE_BLADE.get())
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.COPPER_HAMMER.get(), 8)
                 .pattern("CCC")
@@ -196,6 +296,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STICK)
                 .define('C', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHARGED_COAL_BLOCK.get(), 1)
+                .pattern("CCC")
+                .pattern("CLC")
+                .pattern("CCC")
+                .define('L', Items.LAVA_BUCKET)
+                .define('C', Items.COAL)
+                .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
                 .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItem.COPPERNUGGET.get(), 9)
@@ -259,6 +367,59 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .setTool(Ingredient.of(ModItem.COPPER_HAMMER.get()))
                 .unlockedBy("has_iron", has(Items.IRON_INGOT))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_sword_top_left_forge"));
+
+        new ForgeRecipeBuilder(ModItem.DIAMOND_PICKAXE_HEAD.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.DIAMOND))
+                .setIngredient(1, Ingredient.of(Items.DIAMOND))
+                .setIngredient(2, Ingredient.of(Items.DIAMOND))
+                // ... other slots ...
+                .setFuel(Ingredient.of(ModBlocks.CHARGED_COAL_BLOCK.get()))
+                .setTool(Ingredient.of(ModItem.IRON_HAMMER.get()))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_pickaxe_top_forge"));
+
+        new ForgeRecipeBuilder(ModItem.DIAMOND_SHOVEL_BLADE.get(), 1)
+                .setIngredient(1, Ingredient.of(Items.DIAMOND))
+                // ... other slots ...
+                .setFuel(Ingredient.of(ModBlocks.CHARGED_COAL_BLOCK.get()))
+                .setTool(Ingredient.of(ModItem.IRON_HAMMER.get()))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_shovel_2_forge"));
+        new ForgeRecipeBuilder(ModItem.DIAMOND_SHOVEL_BLADE.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.DIAMOND))
+                // ... other slots ...
+                .setFuel(Ingredient.of(ModBlocks.CHARGED_COAL_BLOCK.get()))
+                .setTool(Ingredient.of(ModItem.IRON_HAMMER.get()))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_shovel_1_forge"));
+
+        new ForgeRecipeBuilder(ModItem.DIAMOND_HOE_BLADE.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.DIAMOND))
+                .setIngredient(1, Ingredient.of(Items.DIAMOND))
+                // ... other slots ...
+                .setFuel(Ingredient.of(ModBlocks.CHARGED_COAL_BLOCK.get()))
+                .setTool(Ingredient.of(ModItem.IRON_HAMMER.get()))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_hoe_top_left_forge"));
+
+        new ForgeRecipeBuilder(ModItem.DIAMOND_AXE_HEAD.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.DIAMOND))
+                .setIngredient(1, Ingredient.of(Items.DIAMOND))
+                .setIngredient(3, Ingredient.of(Items.DIAMOND))
+                // ... other slots ...
+                .setFuel(Ingredient.of(ModBlocks.CHARGED_COAL_BLOCK.get()))
+                .setTool(Ingredient.of(ModItem.IRON_HAMMER.get()))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_axe_top_left_forge"));
+
+        new ForgeRecipeBuilder(ModItem.DIAMOND_SWORD_BLADE.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.DIAMOND))
+                .setIngredient(3, Ingredient.of(Items.DIAMOND))
+                // ... other slots ...
+                .setFuel(Ingredient.of(ModBlocks.CHARGED_COAL_BLOCK.get()))
+                .setTool(Ingredient.of(ModItem.IRON_HAMMER.get()))
+                .unlockedBy("has_diamond", has(Items.DIAMOND))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_sword_top_left_forge"));
 
 
 

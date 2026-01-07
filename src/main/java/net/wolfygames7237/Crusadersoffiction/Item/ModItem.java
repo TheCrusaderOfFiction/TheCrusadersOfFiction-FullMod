@@ -1,9 +1,7 @@
 package net.wolfygames7237.Crusadersoffiction.Item;
 
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.*;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -68,16 +66,35 @@ public class ModItem {
     public static final RegistryObject<Item> IRON_PICKAXE_HEAD = ITEMS.register( "iron_pickaxe_head",
             () ->new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> DIAMOND_SWORD_BLADE = ITEMS.register( "diamond_sword_blade",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_HOE_BLADE = ITEMS.register( "diamond_hoe_blade",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_SHOVEL_BLADE = ITEMS.register( "diamond_shovel_blade",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_AXE_HEAD = ITEMS.register( "diamond_axe_head",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_PICKAXE_HEAD = ITEMS.register( "diamond_pickaxe_head",
+            () ->new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ROCK = ITEMS.register( "rock",
+            () ->new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ROCK_HATCHET = ITEMS.register( "rock_hatchet",
+            () ->new AxeItem(Tiers.WOOD,1,1, new Item.Properties()));
+    public static final RegistryObject<Item> FIBER = ITEMS.register( "fiber",
+            () ->new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> WYSTERIUM_SWORD = ITEMS.register( "wysterium_sword",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 10, 30, new Item.Properties()));
+            () ->new SwordItem(ModToolTiers.WYSTERIUM, 10, 30, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_PICKAXE = ITEMS.register( "wysterium_pickaxe",
             () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 5, 20, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_AXE = ITEMS.register( "wysterium_axe",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 12, 20, new Item.Properties()));
+            () ->new AxeItem(ModToolTiers.WYSTERIUM, 12, 20, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_SHOVEL = ITEMS.register( "wysterium_shovel",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 2, 20, new Item.Properties()));
+            () ->new ShovelItem(ModToolTiers.WYSTERIUM, 2, 20, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_HOE = ITEMS.register( "wysterium_hoe",
-            () ->new PickaxeItem(ModToolTiers.WYSTERIUM, 0, 20, new Item.Properties()));
+            () ->new HoeItem(ModToolTiers.WYSTERIUM, 0, 20, new Item.Properties()));
 
     public static final RegistryObject<Item> WYSTERIUM_HELMET = ITEMS.register("wysterium_helmet",
             () -> new ModArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.HELMET, new Item.Properties()));

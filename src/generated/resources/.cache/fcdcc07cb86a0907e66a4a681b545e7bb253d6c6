@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-06T00:06:52.1458748	Item Models: crusadersoffiction
+// 1.20.1	2026-01-06T17:07:55.4874034	Item Models: crusadersoffiction
 fae171fe160a1aa20485d3771aba09c08db5b891 assets/crusadersoffiction/models/item/bluearmorcasing.json
 73177baea1af2921bf3a29124e728b5cf75957f0 assets/crusadersoffiction/models/item/bluearmorshard.json
 cd3280d83419fcb387f6889fbb3944969c12f9e6 assets/crusadersoffiction/models/item/blueshardh.json
@@ -6,6 +6,12 @@ cd3280d83419fcb387f6889fbb3944969c12f9e6 assets/crusadersoffiction/models/item/b
 2d7653b5a1349d37fab99f0e77236e8d51e95c9f assets/crusadersoffiction/models/item/coppernugget.json
 67694b7e288d23a8570cdede14f9d1dd7a89b3f6 assets/crusadersoffiction/models/item/copperwire.json
 8ac3c75ede42b7d62ad5f72019009271da65ded4 assets/crusadersoffiction/models/item/copper_hammer.json
+2a3a00ba515e9e2185b09378a6f8f1a1fd3a2996 assets/crusadersoffiction/models/item/diamond_axe_head.json
+0de13a7fab1e8e9d8329d1785fbf4fb5c7094f6f assets/crusadersoffiction/models/item/diamond_hoe_blade.json
+7a7de0036f47b5223fb7eafd311e3a80f7267c23 assets/crusadersoffiction/models/item/diamond_pickaxe_head.json
+91b827b649c1e655f26f4653030792374e8434d1 assets/crusadersoffiction/models/item/diamond_shovel_blade.json
+98422fb52028fcd04142431cf7c789ce6f90aad2 assets/crusadersoffiction/models/item/diamond_sword_blade.json
+9ec0951eb563107544ac2e24c291454513228679 assets/crusadersoffiction/models/item/fiber.json
 4b620b64e3b7c10dfd9f1d569c64d838bdb71e33 assets/crusadersoffiction/models/item/forge.json
 0ef7d22c7ab21ca3dae10d0812cd8bdd290ab570 assets/crusadersoffiction/models/item/iron_axe_head.json
 5e2c8c2224d84b3a0417215535c8fe71f046fc32 assets/crusadersoffiction/models/item/iron_hammer.json
@@ -16,6 +22,8 @@ e180c2c82e9509d0ca5d098bfd543b85db215e74 assets/crusadersoffiction/models/item/i
 7a5bbea5ee4da5245b649e78dda0ef47ee962cb8 assets/crusadersoffiction/models/item/obi_rod.json
 077d3426e15644cdf0526441fc42529b1b10f27c assets/crusadersoffiction/models/item/rainbowessance.json
 d466be9078638d07c027a3ad8006fb78fe147dd0 assets/crusadersoffiction/models/item/rawwysterium.json
+2ba883ca9ea13be272d571ebae4ac2a45752d447 assets/crusadersoffiction/models/item/rock.json
+16bf3032a70f94e02d8084288347e4ff52ecf5ea assets/crusadersoffiction/models/item/rock_hatchet.json
 f097a60fc9d2318f538c42b5f19dceb9405724fd assets/crusadersoffiction/models/item/soulessance.json
 cfdf7d12036dddd9e911b5c0f5401cb4eceb9c2f assets/crusadersoffiction/models/item/voidessance.json
 6553833d9f009a22a4a08843d95e11f9f5ad47ea assets/crusadersoffiction/models/item/wysterium.json

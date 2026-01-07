@@ -63,6 +63,18 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.IRON_SHOVEL_BLADE.get());
                         output.accept(ModItem.IRON_HOE_BLADE.get());
 
+                        output.accept(ModItem.DIAMOND_SWORD_BLADE.get());
+                        output.accept(ModItem.DIAMOND_AXE_HEAD.get());
+                        output.accept(ModItem.DIAMOND_PICKAXE_HEAD.get());
+                        output.accept(ModItem.DIAMOND_SHOVEL_BLADE.get());
+                        output.accept(ModItem.DIAMOND_HOE_BLADE.get());
+
+                        output.accept(ModItem.ROCK_HATCHET.get());
+                        output.accept(ModItem.ROCK.get());
+
+                        output.accept(ModItem.FIBER.get());
+                        output.accept(ModBlocks.CHARGED_COAL_BLOCK.get());
+
                     })
                     .build());
 

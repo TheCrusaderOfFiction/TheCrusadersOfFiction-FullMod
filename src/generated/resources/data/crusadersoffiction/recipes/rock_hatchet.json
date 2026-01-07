@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": {
+      "item": "crusadersoffiction:fiber"
+    },
+    "R": {
+      "item": "crusadersoffiction:rock"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "FR",
+    "S "
+  ],
+  "result": {
+    "item": "crusadersoffiction:rock_hatchet"
+  },
+  "show_notification": true
+}

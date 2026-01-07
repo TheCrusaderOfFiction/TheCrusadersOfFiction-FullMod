@@ -23,6 +23,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
+import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.blocks.custom.Forge;
 import net.wolfygames7237.Crusadersoffiction.recipe.ForgeRecipe;
 import net.wolfygames7237.Crusadersoffiction.screen.ForgeMenu;
@@ -49,7 +50,7 @@ public class ForgeBlockEntity extends BlockEntity implements MenuProvider {
                 case 11 -> false;
 
                 // Fuel slot (9) - only allow coal
-                case 9 -> stack.is(Items.COAL);
+                case 9 -> stack.is(Items.COAL) || stack.is(ModBlocks.CHARGED_COAL_BLOCK.get().asItem());
 
                 // Tool slot (10) - only allow hammers
                 case 10 -> stack.is(ModItem.COPPER_HAMMER.get()) || stack.is(ModItem.IRON_HAMMER.get());

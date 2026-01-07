@@ -1,0 +1,27 @@
+{
+  "type": "crusadersoffiction:forge",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {},
+    {},
+    {
+      "item": "minecraft:diamond"
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "item": "crusadersoffiction:charged_coal_block"
+    },
+    {
+      "item": "crusadersoffiction:iron_hammer"
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:diamond_sword_blade"
+  }
+}

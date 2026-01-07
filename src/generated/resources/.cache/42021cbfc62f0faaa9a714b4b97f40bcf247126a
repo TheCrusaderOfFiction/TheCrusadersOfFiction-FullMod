@@ -1,3 +1,6 @@
-// 1.20.1	2025-11-17T01:00:40.4307155	Global Loot Modifiers : crusadersoffiction
+// 1.20.1	2026-01-06T22:23:24.083505	Global Loot Modifiers : crusadersoffiction
+18e701f2adec6c01f12e41c886b30977fabd8535 data/crusadersoffiction/loot_modifiers/fiber_from_grass.json
+05b1f61f4974416cfe223be35ab4000d51b0b47f data/crusadersoffiction/loot_modifiers/require_axe_for_all_logs.json
+82bcfc56f3b33a9e96232fe92ff40cf1f06eed84 data/crusadersoffiction/loot_modifiers/rock_from_grass.json
 98341775449365116a78d7a49b3573d79241c712 data/crusadersoffiction/loot_modifiers/soulessence_from_zombie.json
-f23da1c1e5d2f0030752a24aea3db4db80289c6a data/forge/loot_modifiers/global_loot_modifiers.json
+ccb1e4d31b5535b0a14341cb6beaff8eebc83885 data/forge/loot_modifiers/global_loot_modifiers.json

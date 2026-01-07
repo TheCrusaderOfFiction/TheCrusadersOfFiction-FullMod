@@ -19,6 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.WYSTERIUM_ORE);
         blockWithItem(ModBlocks.WYSTERIUM_BLOCK);
+        blockWithItem(ModBlocks.CHARGED_COAL_BLOCK);
 
         horizontalBlock(ModBlocks.FORGE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/forge")));
