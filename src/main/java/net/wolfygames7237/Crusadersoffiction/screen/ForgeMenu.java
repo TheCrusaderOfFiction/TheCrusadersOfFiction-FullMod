@@ -43,9 +43,9 @@ public class ForgeMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(iItemHandler, 6, 34, 50));
             this.addSlot(new SlotItemHandler(iItemHandler, 7, 52, 50));
             this.addSlot(new SlotItemHandler(iItemHandler, 8, 70, 50));
-            this.addSlot(new SlotItemHandler(iItemHandler, 11, 137, 33));
             this.addSlot(new SlotItemHandler(iItemHandler, 9, 105, 59));
             this.addSlot(new SlotItemHandler(iItemHandler, 10, 105, 10));
+            this.addSlot(new SlotItemHandler(iItemHandler, 11, 137, 33));
         });
 
         addDataSlots(data);
