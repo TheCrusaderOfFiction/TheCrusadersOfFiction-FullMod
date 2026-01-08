@@ -73,7 +73,19 @@ public class CrusadersOfFiction
             new ResourceLocation("minecraft", "iron_axe"),
             new ResourceLocation("minecraft", "iron_pickaxe"),
             new ResourceLocation("minecraft", "iron_hoe"),
-            new ResourceLocation("minecraft", "iron_shovel")
+            new ResourceLocation("minecraft", "iron_shovel"),
+
+            new ResourceLocation("minecraft", "wooden_sword"),
+            new ResourceLocation("minecraft", "wooden_axe"),
+            new ResourceLocation("minecraft", "wooden_pickaxe"),
+            new ResourceLocation("minecraft", "wooden_hoe"),
+            new ResourceLocation("minecraft", "wooden_shovel"),
+
+            new ResourceLocation("minecraft", "stone_sword"),
+            new ResourceLocation("minecraft", "stone_axe"),
+            new ResourceLocation("minecraft", "stone_pickaxe"),
+            new ResourceLocation("minecraft", "stone_hoe"),
+            new ResourceLocation("minecraft", "stone_shovel")
     );
 
     public CrusadersOfFiction(FMLJavaModLoadingContext context)

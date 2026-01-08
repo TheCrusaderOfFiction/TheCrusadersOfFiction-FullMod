@@ -2,20 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "minecraft:copper_ingot"
+    "F": {
+      "item": "crusadersoffiction:fiber"
     },
     "S": {
       "item": "minecraft:stick"
+    },
+    "W": {
+      "tag": "minecraft:planks"
     }
   },
   "pattern": [
-    "CCC",
+    "WW ",
+    "WSF",
     " S "
   ],
   "result": {
-    "count": 5,
-    "item": "crusadersoffiction:copper_hammer"
+    "item": "minecraft:wooden_axe"
   },
   "show_notification": true
 }

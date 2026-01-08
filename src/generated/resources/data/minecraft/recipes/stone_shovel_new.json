@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": [
+      {
+        "item": "crusadersoffiction:fiber"
+      },
+      {
+        "item": "minecraft:string"
+      }
+    ],
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  },
+  "pattern": [
+    " W",
+    "FS",
+    " S"
+  ],
+  "result": {
+    "item": "minecraft:stone_shovel"
+  },
+  "show_notification": true
+}

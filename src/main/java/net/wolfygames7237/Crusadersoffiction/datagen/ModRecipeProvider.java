@@ -198,7 +198,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.IRON_AXE_HEAD.get())
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                .save(pWriter);
+                .save(pWriter, "iron_axe_new");
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_PICKAXE)
                 .pattern("H")
                 .pattern("T")
@@ -207,7 +207,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.IRON_PICKAXE_HEAD.get())
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                .save(pWriter);
+                .save(pWriter, "iron_pickaxe_new");
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_SWORD)
                 .pattern("H")
                 .pattern("T")
@@ -216,7 +216,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.IRON_SWORD_BLADE.get())
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                .save(pWriter);
+                .save(pWriter, "iron_sword_new");
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_SHOVEL)
                 .pattern("H")
                 .pattern("T")
@@ -225,7 +225,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.IRON_SHOVEL_BLADE.get())
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                .save(pWriter);
+                .save(pWriter, "iron_shovel_new");
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.IRON_HOE)
                 .pattern("H")
                 .pattern("T")
@@ -234,7 +234,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.IRON_HOE_BLADE.get())
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
-                .save(pWriter);
+                .save(pWriter, "iron_hoe_new");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_AXE)
                 .pattern("H")
@@ -244,7 +244,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.DIAMOND_AXE_HEAD.get())
                 .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
-                .save(pWriter);
+                .save(pWriter, "diamond_axe_new");
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_PICKAXE)
                 .pattern("H")
                 .pattern("T")
@@ -253,7 +253,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.DIAMOND_PICKAXE_HEAD.get())
                 .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
-                .save(pWriter);
+                .save(pWriter, "diamond_pickaxe_new");
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_SWORD)
                 .pattern("H")
                 .pattern("T")
@@ -262,8 +262,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.DIAMOND_SWORD_BLADE.get())
                 .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND)
+                .save(pWriter, "diamond_sword_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_SHOVEL)
                 .pattern("H")
                 .pattern("T")
                 .pattern("S")
@@ -271,7 +271,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.DIAMOND_SHOVEL_BLADE.get())
                 .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
-                .save(pWriter);
+                .save(pWriter, "diamond_shovel_new");
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.DIAMOND_HOE)
                 .pattern("H")
                 .pattern("T")
@@ -280,16 +280,108 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('T', Items.STRING)
                 .define('H', ModItem.DIAMOND_HOE_BLADE.get())
                 .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
-                .save(pWriter);
+                .save(pWriter, "diamond_hoe_new");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.COPPER_HAMMER.get(), 8)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.STONE_HOE)
+                .pattern("WW")
+                .pattern("FS")
+                .pattern(" S")
+                .define('S', Items.STICK)
+                .define('F', Ingredient.of(ModItem.FIBER.get(), Items.STRING))
+                .define('W', ItemTags.STONE_TOOL_MATERIALS)
+                .unlockedBy(getHasName(Items.COBBLESTONE), has(ItemTags.STONE_TOOL_MATERIALS))
+                .save(pWriter, "stone_hoe_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
+                .pattern("WWW")
+                .pattern("FS ")
+                .pattern(" S ")
+                .define('S', Items.STICK)
+                .define('F', Ingredient.of(ModItem.FIBER.get(), Items.STRING))
+                .define('W', ItemTags.STONE_TOOL_MATERIALS)
+                .unlockedBy(getHasName(Items.COBBLESTONE), has(ItemTags.STONE_TOOL_MATERIALS))
+                .save(pWriter, "stone_pickaxe_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.STONE_SHOVEL)
+                .pattern(" W")
+                .pattern("FS")
+                .pattern(" S")
+                .define('S', Items.STICK)
+                .define('F', Ingredient.of(ModItem.FIBER.get(), Items.STRING))
+                .define('W', ItemTags.STONE_TOOL_MATERIALS)
+                .unlockedBy(getHasName(Items.COBBLESTONE), has(ItemTags.STONE_TOOL_MATERIALS))
+                .save(pWriter, "stone_shovel_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.STONE_AXE)
+                .pattern("WW ")
+                .pattern("WSF")
+                .pattern(" S ")
+                .define('S', Items.STICK)
+                .define('F', Ingredient.of(ModItem.FIBER.get(), Items.STRING))
+                .define('W', ItemTags.STONE_TOOL_MATERIALS)
+                .unlockedBy(getHasName(Items.COBBLESTONE), has(ItemTags.STONE_TOOL_MATERIALS))
+                .save(pWriter, "stone_axe_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.STONE_SWORD)
+                .pattern(" W")
+                .pattern("FW")
+                .pattern(" S")
+                .define('S', Items.STICK)
+                .define('F', Ingredient.of(ModItem.FIBER.get(), Items.STRING))
+                .define('W', ItemTags.STONE_TOOL_MATERIALS)
+                .unlockedBy(getHasName(Items.COBBLESTONE), has(ItemTags.STONE_TOOL_MATERIALS))
+                .save(pWriter, "stone_sword_new");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_HOE)
+                .pattern("WW")
+                .pattern("FS")
+                .pattern(" S")
+                .define('S', Items.STICK)
+                .define('F', ModItem.FIBER.get())
+                .define('W', ItemTags.PLANKS)
+                .unlockedBy(getHasName(Items.OAK_PLANKS), has(ItemTags.PLANKS))
+                .save(pWriter, "wooden_hoe_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_PICKAXE)
+                .pattern("WWW")
+                .pattern("FS ")
+                .pattern(" S ")
+                .define('S', Items.STICK)
+                .define('F', ModItem.FIBER.get())
+                .define('W', ItemTags.PLANKS)
+                .unlockedBy(getHasName(Items.OAK_PLANKS), has(ItemTags.PLANKS))
+                .save(pWriter, "wooden_pickaxe_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_SHOVEL)
+                .pattern(" W")
+                .pattern("FS")
+                .pattern(" S")
+                .define('S', Items.STICK)
+                .define('F', ModItem.FIBER.get())
+                .define('W', ItemTags.PLANKS)
+                .unlockedBy(getHasName(Items.OAK_PLANKS), has(ItemTags.PLANKS))
+                .save(pWriter, "wooden_shovel_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_AXE)
+                .pattern("WW ")
+                .pattern("WSF")
+                .pattern(" S ")
+                .define('S', Items.STICK)
+                .define('F', ModItem.FIBER.get())
+                .define('W', ItemTags.PLANKS)
+                .unlockedBy(getHasName(Items.OAK_PLANKS), has(ItemTags.PLANKS))
+                .save(pWriter, "wooden_axe_new");
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.WOODEN_SWORD)
+                .pattern(" W")
+                .pattern("FW")
+                .pattern(" S")
+                .define('S', Items.STICK)
+                .define('F', ModItem.FIBER.get())
+                .define('W', ItemTags.PLANKS)
+                .unlockedBy(getHasName(Items.OAK_PLANKS), has(ItemTags.PLANKS))
+                .save(pWriter, "wooden_sword_new");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.COPPER_HAMMER.get(), 5)
                 .pattern("CCC")
                 .pattern(" S ")
                 .define('S', Items.STICK)
                 .define('C', Items.COPPER_INGOT)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.IRON_HAMMER.get(), 8)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItem.IRON_HAMMER.get(), 5)
                 .pattern(" CC")
                 .pattern(" SC")
                 .pattern("S  ")

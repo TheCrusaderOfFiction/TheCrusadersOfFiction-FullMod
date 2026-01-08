@@ -2,20 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "minecraft:copper_ingot"
+    "H": {
+      "item": "crusadersoffiction:diamond_shovel_blade"
     },
     "S": {
       "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "minecraft:string"
     }
   },
   "pattern": [
-    "CCC",
-    " S "
+    "H",
+    "T",
+    "S"
   ],
   "result": {
-    "count": 5,
-    "item": "crusadersoffiction:copper_hammer"
+    "item": "minecraft:diamond_shovel"
   },
   "show_notification": true
 }

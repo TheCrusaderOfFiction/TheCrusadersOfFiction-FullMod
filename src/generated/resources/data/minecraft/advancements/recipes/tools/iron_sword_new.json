@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:iron_sword"
+        "recipe": "minecraft:iron_sword_new"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:iron_sword"
+      "minecraft:iron_sword_new"
     ]
   },
   "sends_telemetry_event": false

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:diamond_sword"
+        "recipe": "minecraft:diamond_shovel_new"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:diamond_sword"
+      "minecraft:diamond_shovel_new"
     ]
   },
   "sends_telemetry_event": false

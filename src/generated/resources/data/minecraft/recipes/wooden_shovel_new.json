@@ -2,23 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "H": {
-      "item": "crusadersoffiction:diamond_shovel_blade"
+    "F": {
+      "item": "crusadersoffiction:fiber"
     },
     "S": {
       "item": "minecraft:stick"
     },
-    "T": {
-      "item": "minecraft:string"
+    "W": {
+      "tag": "minecraft:planks"
     }
   },
   "pattern": [
-    "H",
-    "T",
-    "S"
+    " W",
+    "FS",
+    " S"
   ],
   "result": {
-    "item": "minecraft:diamond"
+    "item": "minecraft:wooden_shovel"
   },
   "show_notification": true
 }
