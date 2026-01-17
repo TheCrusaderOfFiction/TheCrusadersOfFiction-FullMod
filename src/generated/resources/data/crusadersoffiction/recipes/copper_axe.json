@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "WW ",
+    "WS ",
+    " S "
+  ],
+  "result": {
+    "item": "crusadersoffiction:copper_axe"
+  },
+  "show_notification": true
+}

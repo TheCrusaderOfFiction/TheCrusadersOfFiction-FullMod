@@ -57,6 +57,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.COPPER_HAMMER.get());
                         output.accept(ModItem.IRON_HAMMER.get());
 
+                        output.accept(ModItem.COPPER_SWORD.get());
+                        output.accept(ModItem.COPPER_PICKAXE.get());
+                        output.accept(ModItem.COPPER_AXE.get());
+                        output.accept(ModItem.COPPER_SHOVEL.get());
+                        output.accept(ModItem.COPPER_HOE.get());
+
                         output.accept(ModItem.IRON_SWORD_BLADE.get());
                         output.accept(ModItem.IRON_AXE_HEAD.get());
                         output.accept(ModItem.IRON_PICKAXE_HEAD.get());

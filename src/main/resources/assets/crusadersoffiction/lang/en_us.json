@@ -27,6 +27,12 @@
   "item.crusadersoffiction.copper_hammer": "Copper Hammer",
   "item.crusadersoffiction.iron_hammer": "Iron Hammer",
 
+  "item.crusadersoffiction.copper_sword": "Copper Sword",
+  "item.crusadersoffiction.copper_pickaxe": "Copper Pickaxe",
+  "item.crusadersoffiction.copper_axe": "Copper Axe",
+  "item.crusadersoffiction.copper_shovel": "Copper Shovel",
+  "item.crusadersoffiction.copper_hoe": "Copper Hoe",
+
   "item.crusadersoffiction.iron_sword_blade": "Iron Sword Blade",
   "item.crusadersoffiction.iron_hoe_blade": "Iron Hoe Blade",
   "item.crusadersoffiction.iron_shovel_blade": "Iron Shovel Blade",
@@ -47,6 +53,8 @@
   "block.crusadersoffiction.wysterium_block": "Wysterium Block",
   "block.crusadersoffiction.forge": "Forge",
   "block.crusadersoffiction.charged_coal_block": "Charged Coal Block",
+
+  "enchantment.mccourse.lightning_striker": "Lightning Striker",
 
   "creativetab.crusader_mod": "Crusaders Mod",
   "creativetab.crusader_progress": "Crusaders: Progress Reimagined"

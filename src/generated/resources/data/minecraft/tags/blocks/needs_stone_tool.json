@@ -1,3 +1,6 @@
 {
+  "remove": [
+    "#minecraft:iron_ores"
+  ],
   "values": []
 }

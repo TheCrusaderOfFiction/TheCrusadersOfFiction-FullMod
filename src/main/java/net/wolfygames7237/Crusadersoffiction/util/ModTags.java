@@ -12,7 +12,8 @@ public class ModTags {
     public static class Blocks {
 
         public static final TagKey<Block> NEEDS_WYSTERIUM_TOOL = tag("needs_wysterium_tool");
-
+        public static final TagKey<Block> NEEDS_WOOD_TOOL = tag("needs_wood_tool");
+        public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(CrusadersOfFiction.MOD_ID, name));

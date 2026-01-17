@@ -2,26 +2,18 @@ package net.wolfygames7237.Crusadersoffiction;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.wolfygames7237.Crusadersoffiction.Item.ModCreativeModeTabs;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
@@ -38,6 +30,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.wolfygames7237.Crusadersoffiction.enchantments.ModEnchantments;
 import net.wolfygames7237.Crusadersoffiction.entity.ModBlockEntities;
 import net.wolfygames7237.Crusadersoffiction.loot.ModLootModifiers;
 import net.wolfygames7237.Crusadersoffiction.recipe.ModRecipes;
@@ -59,8 +52,7 @@ public class CrusadersOfFiction
 {
     public static final String MOD_ID = "crusadersoffiction";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("cursedfate", "cursedfate"), () -> "1", "1"::equals, "1"::equals);
-    private static int messageID = 0;
+       private static int messageID = 0;
 
     private static final Set<ResourceLocation> BLOCKED_RECIPES = Set.of(
             new ResourceLocation("minecraft", "diamond_sword"),
@@ -99,6 +91,8 @@ public class CrusadersOfFiction
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModEnchantments.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -124,7 +118,6 @@ public class CrusadersOfFiction
         });
     }
     public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
-        PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
         ++messageID;
     }
 

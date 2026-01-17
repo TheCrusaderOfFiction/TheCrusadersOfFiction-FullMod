@@ -96,6 +96,17 @@ public class ModItem {
     public static final RegistryObject<Item> WYSTERIUM_HOE = ITEMS.register( "wysterium_hoe",
             () ->new HoeItem(ModToolTiers.WYSTERIUM, 0, 20, new Item.Properties()));
 
+    public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register( "copper_sword",
+            () ->new SwordItem(ModToolTiers.COPPER, 5, 2, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register( "copper_pickaxe",
+            () ->new PickaxeItem(ModToolTiers.COPPER, 3, 1, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_AXE = ITEMS.register( "copper_axe",
+            () ->new AxeItem(ModToolTiers.COPPER, 7, 1, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register( "copper_shovel",
+            () ->new ShovelItem(ModToolTiers.COPPER, 3, 1, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_HOE = ITEMS.register( "copper_hoe",
+            () ->new HoeItem(ModToolTiers.COPPER, 0, 2, new Item.Properties()));
+
     public static final RegistryObject<Item> WYSTERIUM_HELMET = ITEMS.register("wysterium_helmet",
             () -> new ModArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_CHESTPLATE = ITEMS.register("wysterium_chestplate",

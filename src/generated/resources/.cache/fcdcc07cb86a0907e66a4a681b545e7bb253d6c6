@@ -1,11 +1,16 @@
-// 1.20.1	2026-01-06T17:07:55.4874034	Item Models: crusadersoffiction
+// 1.20.1	2026-01-13T23:37:13.7224741	Item Models: crusadersoffiction
 fae171fe160a1aa20485d3771aba09c08db5b891 assets/crusadersoffiction/models/item/bluearmorcasing.json
 73177baea1af2921bf3a29124e728b5cf75957f0 assets/crusadersoffiction/models/item/bluearmorshard.json
 cd3280d83419fcb387f6889fbb3944969c12f9e6 assets/crusadersoffiction/models/item/blueshardh.json
 3aca7844102fb29c86bf45e361e938a14ec01e0d assets/crusadersoffiction/models/item/computerchip.json
 2d7653b5a1349d37fab99f0e77236e8d51e95c9f assets/crusadersoffiction/models/item/coppernugget.json
 67694b7e288d23a8570cdede14f9d1dd7a89b3f6 assets/crusadersoffiction/models/item/copperwire.json
+1b1eabed77ea1e4aa36e27f0c1bf4f7ce154572d assets/crusadersoffiction/models/item/copper_axe.json
 8ac3c75ede42b7d62ad5f72019009271da65ded4 assets/crusadersoffiction/models/item/copper_hammer.json
+69f14eca0b522134bd0abd575810563b8064b40e assets/crusadersoffiction/models/item/copper_hoe.json
+1c62b5c005f9c4deca8ccf948dec5be0135f11c2 assets/crusadersoffiction/models/item/copper_pickaxe.json
+4c04454b8657c2476034f97c483c08ced7e881ff assets/crusadersoffiction/models/item/copper_shovel.json
+85bb5cd92fb6a9d28269ce4c23a011159ff6161b assets/crusadersoffiction/models/item/copper_sword.json
 2a3a00ba515e9e2185b09378a6f8f1a1fd3a2996 assets/crusadersoffiction/models/item/diamond_axe_head.json
 0de13a7fab1e8e9d8329d1785fbf4fb5c7094f6f assets/crusadersoffiction/models/item/diamond_hoe_blade.json
 7a7de0036f47b5223fb7eafd311e3a80f7267c23 assets/crusadersoffiction/models/item/diamond_pickaxe_head.json

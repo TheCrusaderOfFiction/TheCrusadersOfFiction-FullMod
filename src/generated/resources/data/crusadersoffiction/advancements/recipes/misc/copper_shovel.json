@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cobblestone": {
+    "has_copper_ingot": {
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:stone_tool_materials"
+            "items": [
+              "minecraft:copper_ingot"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crusadersoffiction:forge"
+        "recipe": "crusadersoffiction:copper_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cobblestone",
+      "has_copper_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crusadersoffiction:forge"
+      "crusadersoffiction:copper_shovel"
     ]
   },
   "sends_telemetry_event": false

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.wolfygames7237.Crusadersoffiction.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "TieredItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

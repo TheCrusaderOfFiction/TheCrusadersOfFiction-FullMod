@@ -67,6 +67,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItem.WYSTERIUM_LEGGINGS);
         trimmedArmorItem(ModItem.WYSTERIUM_BOOTS);
 
+        handheldItem(ModItem.COPPER_SWORD);
+        handheldItem(ModItem.COPPER_PICKAXE);
+        handheldItem(ModItem.COPPER_AXE);
+        handheldItem(ModItem.COPPER_SHOVEL);
+        handheldItem(ModItem.COPPER_HOE);
 
         complexBlock(ModBlocks.FORGE.get());
         simpleItem(ModItem.FIBER);
