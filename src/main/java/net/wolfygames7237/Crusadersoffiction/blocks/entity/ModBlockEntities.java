@@ -1,4 +1,4 @@
-package net.wolfygames7237.Crusadersoffiction.entity;
+package net.wolfygames7237.Crusadersoffiction.blocks.entity;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;

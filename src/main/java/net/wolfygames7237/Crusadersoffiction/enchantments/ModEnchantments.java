@@ -18,6 +18,11 @@ public class ModEnchantments {
                     () -> new LightningStrikerEnchantment(Enchantment.Rarity.COMMON, EnchantmentCategory.WEAPON,
                             EquipmentSlot.MAINHAND));
 
+    public static final RegistryObject<Enchantment> ENCH_SWORD_PROJECTILE =
+            ENCHANTMENTS.register("enchanted_sword",
+                    () -> new EnchSwordEnchantment(Enchantment.Rarity.COMMON, EnchantmentCategory.WEAPON,
+                            EquipmentSlot.MAINHAND));
+
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);
     }

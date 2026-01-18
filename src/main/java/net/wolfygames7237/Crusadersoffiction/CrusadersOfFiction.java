@@ -2,6 +2,7 @@ package net.wolfygames7237.Crusadersoffiction;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -31,7 +32,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.wolfygames7237.Crusadersoffiction.enchantments.ModEnchantments;
-import net.wolfygames7237.Crusadersoffiction.entity.ModBlockEntities;
+import net.wolfygames7237.Crusadersoffiction.blocks.entity.ModBlockEntities;
+import net.wolfygames7237.Crusadersoffiction.entity.ModEntities;
+import net.wolfygames7237.Crusadersoffiction.entity.client.EnchantedSwordProjectileRenderer;
 import net.wolfygames7237.Crusadersoffiction.loot.ModLootModifiers;
 import net.wolfygames7237.Crusadersoffiction.recipe.ModRecipes;
 import net.wolfygames7237.Crusadersoffiction.screen.ForgeScreen;
@@ -92,6 +95,7 @@ public class CrusadersOfFiction
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModEnchantments.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -192,6 +196,7 @@ public class CrusadersOfFiction
             event.enqueueWork(() -> {
 
                 MenuScreens.register(ModMenuTypes.FORGE_MENU.get(), ForgeScreen::new);
+                EntityRenderers.register(ModEntities.ENCHANTED_SWORD_PROJECTILE.get(), EnchantedSwordProjectileRenderer::new);
             });
         }
     }

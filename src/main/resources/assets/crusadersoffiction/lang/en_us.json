@@ -54,7 +54,8 @@
   "block.crusadersoffiction.forge": "Forge",
   "block.crusadersoffiction.charged_coal_block": "Charged Coal Block",
 
-  "enchantment.mccourse.lightning_striker": "Lightning Striker",
+  "enchantment.crusadersoffiction.lightning_striker": "Lightning Striker",
+  "enchantment.crusadersoffiction.enchanted_sword": "Enchanted Sword",
 
   "creativetab.crusader_mod": "Crusaders Mod",
   "creativetab.crusader_progress": "Crusaders: Progress Reimagined"

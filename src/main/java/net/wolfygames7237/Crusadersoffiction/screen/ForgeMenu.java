@@ -10,8 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
-import net.wolfygames7237.Crusadersoffiction.entity.ForgeBlockEntity;
-import org.jetbrains.annotations.Nullable;
+import net.wolfygames7237.Crusadersoffiction.blocks.entity.ForgeBlockEntity;
 
 public class ForgeMenu extends AbstractContainerMenu {
     public final ForgeBlockEntity blockEntity;

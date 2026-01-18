@@ -1,4 +1,4 @@
-package net.wolfygames7237.Crusadersoffiction.entity;
+package net.wolfygames7237.Crusadersoffiction.blocks.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,10 +24,8 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
-import net.wolfygames7237.Crusadersoffiction.blocks.custom.Forge;
 import net.wolfygames7237.Crusadersoffiction.recipe.ForgeRecipe;
 import net.wolfygames7237.Crusadersoffiction.screen.ForgeMenu;
-import net.wolfygames7237.Crusadersoffiction.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

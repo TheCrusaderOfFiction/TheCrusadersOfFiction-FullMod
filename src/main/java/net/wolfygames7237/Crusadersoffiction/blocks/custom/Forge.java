@@ -19,8 +19,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
-import net.wolfygames7237.Crusadersoffiction.entity.ForgeBlockEntity;
-import net.wolfygames7237.Crusadersoffiction.entity.ModBlockEntities;
+import net.wolfygames7237.Crusadersoffiction.blocks.entity.ForgeBlockEntity;
+import net.wolfygames7237.Crusadersoffiction.blocks.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
 public class Forge extends BaseEntityBlock {
