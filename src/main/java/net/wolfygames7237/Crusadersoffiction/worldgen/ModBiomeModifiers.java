@@ -16,7 +16,6 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_NETHER_WYSTERIUM_ORE = registerKey("add_nether_wysterium_ore");
     public static final ResourceKey<BiomeModifier> ADD_END_WYSTERIUM_ORE = registerKey("add_end_wysterium_ore");
 
-
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);

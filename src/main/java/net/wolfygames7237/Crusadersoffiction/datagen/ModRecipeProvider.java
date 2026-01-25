@@ -16,7 +16,9 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
+import net.wolfygames7237.Crusadersoffiction.datagen.custom.BlockCompressorRecipeBuilder;
 import net.wolfygames7237.Crusadersoffiction.datagen.custom.ForgeRecipeBuilder;
+import net.wolfygames7237.Crusadersoffiction.datagen.custom.StructureBuilderRecipeBuilder;
 
 
 import java.util.List;
@@ -552,6 +554,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .setTool(Ingredient.of(ModItem.IRON_HAMMER.get()))
                 .unlockedBy("has_diamond", has(Items.DIAMOND))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_sword_top_left_forge"));
+
+        new StructureBuilderRecipeBuilder(ModItem.MOB_FARM_STRUCTURE.get(), 1)
+                .setIngredient(0, Ingredient.of(ModItem.COBBLESTONE_PLACER.get()),16)
+                .setIngredient(1, Ingredient.of(ModItem.COBBLESTONE_PLACER.get()),3)
+                .setIngredient(2, Ingredient.of(ItemTags.TRAPDOORS), 64)
+                .setIngredient(3, Ingredient.of(ItemTags.TRAPDOORS), 36)
+                .setIngredient(4, Ingredient.of(Blocks.CHEST.asItem()), 2)
+                .setIngredient(5, Ingredient.of(Blocks.HOPPER.asItem()), 5)
+                .setIngredient(6, Ingredient.of(Items.WATER_BUCKET), 1)
+                .setIngredient(7, Ingredient.of(Items.WATER_BUCKET), 1)
+                .unlockedBy("has_stone", has(ItemTags.STONE_TOOL_MATERIALS))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "mob_farm"));
+
+        new BlockCompressorRecipeBuilder(ModItem.COBBLESTONE_PLACER.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.COBBLESTONE),64)
+                .unlockedBy("has_compressor", has(ModBlocks.BLOCK_COMPRESSOR.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "compressed_cobble"));
+
 
 
 

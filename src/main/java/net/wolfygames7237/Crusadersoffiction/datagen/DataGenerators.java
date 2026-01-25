@@ -3,11 +3,13 @@ package net.wolfygames7237.Crusadersoffiction.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.loot.LootTableProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
+import net.wolfygames7237.Crusadersoffiction.datagen.loot.ModChestLoot;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,7 +22,7 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+
         generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
 
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
@@ -33,5 +35,8 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+
+        generator.addProvider(event.includeClient(), new StructureJsonGenerator(packOutput, CrusadersOfFiction.MOD_ID));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
     }
 }

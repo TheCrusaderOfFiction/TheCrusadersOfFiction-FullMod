@@ -15,6 +15,10 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<ForgeRecipe>> FORGE_SERIALIZER =
             SERIALIZERS.register("forge", () -> ForgeRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<StructureBuilderRecipe>> STRUCTURE_BUILDER_SERIALIZER =
+            SERIALIZERS.register("structure", () -> StructureBuilderRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BlockCompressorRecipe>> BLOCK_COMPRESSOR_SERIALIZER =
+            SERIALIZERS.register("compressor", () -> BlockCompressorRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

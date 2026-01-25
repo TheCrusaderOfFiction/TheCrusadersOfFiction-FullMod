@@ -1,6 +1,8 @@
-// 1.20.1	2026-01-06T20:39:33.4999136	Block States: crusadersoffiction
+// 1.20.1	2026-01-24T21:19:03.2925976	Block States: crusadersoffiction
+e0e7809175b0079cab12d6ad5664e2651a3c9061 assets/crusadersoffiction/blockstates/block_compressor.json
 1f41d9c1477f11db41e0cad65b0f994e34a735c4 assets/crusadersoffiction/blockstates/charged_coal_block.json
 a69c06d74655d4e4919d78068dc49321d90a60e1 assets/crusadersoffiction/blockstates/forge.json
+8dadc51b74d57e950f8f045939a28a5ac45cfc9b assets/crusadersoffiction/blockstates/structure_builder.json
 ee38633e8a4c97195fbed04df9c2ae94ae8d324f assets/crusadersoffiction/blockstates/wysterium_block.json
 da93ef019476f399a951ee60e28d9a78ca1761a6 assets/crusadersoffiction/blockstates/wysterium_ore.json
 295c2b0c881ccf224dc7ea156083f13cfe206ecc assets/crusadersoffiction/models/block/charged_coal_block.json

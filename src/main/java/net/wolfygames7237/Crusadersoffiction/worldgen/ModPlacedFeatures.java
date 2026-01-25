@@ -8,9 +8,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 
 import java.util.List;
@@ -29,6 +27,7 @@ public class ModPlacedFeatures {
         register(context, END_WYSTERIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_WYSTERIUM_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(3,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(50))));
+
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

@@ -1,0 +1,104 @@
+{
+  "type": "crusadersoffiction:structure",
+  "ingredients": [
+    {
+      "count": 16,
+      "ingredient": {
+        "item": "crusadersoffiction:cobblestone_placer"
+      }
+    },
+    {
+      "count": 3,
+      "ingredient": {
+        "item": "crusadersoffiction:cobblestone_placer"
+      }
+    },
+    {
+      "count": 64,
+      "ingredient": {
+        "tag": "minecraft:trapdoors"
+      }
+    },
+    {
+      "count": 36,
+      "ingredient": {
+        "tag": "minecraft:trapdoors"
+      }
+    },
+    {
+      "count": 2,
+      "ingredient": {
+        "item": "minecraft:chest"
+      }
+    },
+    {
+      "count": 5,
+      "ingredient": {
+        "item": "minecraft:hopper"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:mob_farm_structure"
+  }
+}

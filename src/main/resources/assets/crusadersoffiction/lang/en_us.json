@@ -52,10 +52,16 @@
   "block.crusadersoffiction.wysterium_ore": "Wysterium Ore",
   "block.crusadersoffiction.wysterium_block": "Wysterium Block",
   "block.crusadersoffiction.forge": "Forge",
+  "block.crusadersoffiction.block_compressor": "Block Compressor",
+  "block.crusadersoffiction.structure_builder": "Structure Builder",
   "block.crusadersoffiction.charged_coal_block": "Charged Coal Block",
 
   "enchantment.crusadersoffiction.lightning_striker": "Lightning Striker",
   "enchantment.crusadersoffiction.enchanted_sword": "Enchanted Sword",
+
+  "item.crusadersoffiction.cobblestone_placer": "Compressed Cobblestone",
+  "item.crusadersoffiction.magma_block_placer": "Compressed Magma Block",
+  "item.crusadersoffiction.mob_farm_structure": "Mob Farm",
 
   "creativetab.crusader_mod": "Crusaders Mod",
   "creativetab.crusader_progress": "Crusaders: Progress Reimagined"

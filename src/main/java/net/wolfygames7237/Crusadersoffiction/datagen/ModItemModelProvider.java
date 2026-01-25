@@ -1,5 +1,6 @@
 package net.wolfygames7237.Crusadersoffiction.datagen;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -9,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -20,6 +22,7 @@ import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 
 
+import java.lang.reflect.Field;
 import java.util.LinkedHashMap;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -74,6 +77,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItem.COPPER_HOE);
 
         complexBlock(ModBlocks.FORGE.get());
+        complexBlock(ModBlocks.STRUCTURE_BUILDER.get());
+        complexBlock(ModBlocks.BLOCK_COMPRESSOR.get());
         simpleItem(ModItem.FIBER);
 
         handheldItem(ModItem.COPPER_HAMMER);
@@ -93,6 +98,57 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldItem(ModItem.ROCK_HATCHET);
         handheldItem(ModItem.ROCK);
+
+        blockItem(ModItem.MOB_FARM_STRUCTURE, Blocks.STONE);
+
+        generatePlacerModels();
+    }
+    private void generatePlacerModels() {
+        // Loop through all your ModItems
+        ModItem.ITEMS.getEntries().stream()
+                .filter(regObj -> regObj.getId().getPath().endsWith("_placer"))
+                .forEach(regObj -> {
+                    Item placer = regObj.get();
+
+                    // Extract the prefix (remove "_PLACER")
+                    String prefix = regObj.getId().getPath().replace("_placer", "");
+
+                    // Attempt to find a corresponding block in ModBlocks or vanilla Blocks
+                    Block block = getBlockForPrefix(prefix);
+
+                    if (block == Blocks.AIR) {
+                        System.out.println("[ItemModelProvider] Warning: Could not find block for placer " + regObj.getId());
+                        return;
+                    }
+
+                    // Generate the item model
+                    blockItem(regObj, block);
+                    System.out.println("[ItemModelProvider] Generated placer model: " + regObj.getId() + " -> " + block);
+                });
+    }
+
+    /** Lookup block by prefix in ModBlocks first, then vanilla Blocks */
+    private Block getBlockForPrefix(String prefix) {
+        // Try ModBlocks first
+        try {
+            for (Field field : ModBlocks.class.getDeclaredFields()) {
+                if (field.getName().equalsIgnoreCase(prefix) && RegistryObject.class.isAssignableFrom(field.getType())) {
+                    RegistryObject<Block> ro = (RegistryObject<Block>) field.get(null);
+                    return ro.get();
+                }
+            }
+        } catch (IllegalAccessException ignored) {}
+
+        // Fallback to vanilla Blocks
+        try {
+            for (Field field : Blocks.class.getDeclaredFields()) {
+                if (field.getName().equalsIgnoreCase(prefix) && Block.class.isAssignableFrom(field.getType())) {
+                    return (Block) field.get(null);
+                }
+            }
+        } catch (IllegalAccessException ignored) {}
+
+        return Blocks.AIR;
     }
 
     private ItemModelBuilder complexBlock(Block block) {
@@ -157,4 +213,12 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/handheld")).texture("layer0",
                 new ResourceLocation(CrusadersOfFiction.MOD_ID,"item/" + item.getId().getPath()));
     }
+    private ItemModelBuilder blockItem(RegistryObject<Item> itemReg, Block block) {
+        return withExistingParent(
+                itemReg.getId().getPath(),
+                new ResourceLocation("minecraft", "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath())
+        );
+    }
+
+
 }

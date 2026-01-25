@@ -23,6 +23,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         horizontalBlock(ModBlocks.FORGE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/forge")));
+        horizontalBlock(ModBlocks.STRUCTURE_BUILDER.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/structure_builder")));
+        horizontalBlock(ModBlocks.BLOCK_COMPRESSOR.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/block_compressor")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

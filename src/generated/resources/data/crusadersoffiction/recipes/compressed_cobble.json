@@ -1,0 +1,14 @@
+{
+  "type": "crusadersoffiction:compressor",
+  "ingredients": [
+    {
+      "count": 64,
+      "ingredient": {
+        "item": "minecraft:cobblestone"
+      }
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:cobblestone_placer"
+  }
+}

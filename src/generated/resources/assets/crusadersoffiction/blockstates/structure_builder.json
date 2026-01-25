@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "crusadersoffiction:block/structure_builder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "crusadersoffiction:block/structure_builder"
+    },
+    "facing=south": {
+      "model": "crusadersoffiction:block/structure_builder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "crusadersoffiction:block/structure_builder",
+      "y": 270
+    }
+  }
+}

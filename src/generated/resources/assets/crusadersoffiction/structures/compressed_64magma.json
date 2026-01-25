@@ -1,0 +1,388 @@
+{
+  "blocks": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 0,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 1,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 2,
+      "block": "minecraft:magma_block"
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "z": 3,
+      "block": "minecraft:magma_block"
+    }
+  ]
+}

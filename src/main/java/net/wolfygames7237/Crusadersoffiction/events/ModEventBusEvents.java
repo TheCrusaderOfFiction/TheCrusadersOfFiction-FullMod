@@ -14,7 +14,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.ENCHANTED_SWORD_PROJECTILE_LAYER, EnchantedSwordProjectileModel::createBodyLayer);
-
+        event.registerLayerDefinition(ModModelLayers.ENCHANTED_SWORD_PROJECTILE2_LAYER, EnchantedSwordProjectileModel::createBodyLayer);
 
     }
 

@@ -7,6 +7,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.wolfygames7237.Crusadersoffiction.Item.custom.ModArmorItem;
+import net.wolfygames7237.Crusadersoffiction.Item.structure.MagmaCompressedPlacerItem;
+import net.wolfygames7237.Crusadersoffiction.Item.structure.MobfarmCompressedPlacerItem;
+import net.wolfygames7237.Crusadersoffiction.Item.structure.StoneCompressedPlacerItem;
 
 public class ModItem {
     public static final DeferredRegister<Item> ITEMS =
@@ -115,6 +118,13 @@ public class ModItem {
             () -> new ArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUM_BOOTS = ITEMS.register("wysterium_boots",
             () -> new ArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> COBBLESTONE_PLACER = ITEMS.register("cobblestone_placer",
+                    () -> new StoneCompressedPlacerItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> MAGMA_BLOCK_PLACER = ITEMS.register("magma_block_placer",
+            () -> new MagmaCompressedPlacerItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> MOB_FARM_STRUCTURE = ITEMS.register("mob_farm_structure",
+            () -> new MobfarmCompressedPlacerItem(new Item.Properties().stacksTo(1)));
 
 
     public static void register(IEventBus eventBus) {

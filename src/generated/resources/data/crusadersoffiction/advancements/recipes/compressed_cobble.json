@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_compressor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crusadersoffiction:block_compressor"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crusadersoffiction:compressed_cobble"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_compressor",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crusadersoffiction:compressed_cobble"
+    ]
+  },
+  "sends_telemetry_event": true
+}

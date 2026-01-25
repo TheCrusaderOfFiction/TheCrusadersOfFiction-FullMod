@@ -1,5 +1,9 @@
-// 1.20.1	2026-01-06T20:39:33.5014391	Loot Tables
+// 1.20.1	2026-01-24T21:19:03.293922	Loot Tables
+4971710b618ebf6201fd3aeea11654840b8f6715 data/crusadersoffiction/loot_tables/blocks/block_compressor.json
 2936b8ef25242f6d0002127571649a0c649ef58c data/crusadersoffiction/loot_tables/blocks/charged_coal_block.json
 467ca3cef7e29aa5f9ea8278d226df670dfae4ef data/crusadersoffiction/loot_tables/blocks/forge.json
+9270aa23cc07da5a7fa722a704ebbb91a36b9f6f data/crusadersoffiction/loot_tables/blocks/structure_builder.json
 6b85e9d6d4b996770b03c6ab83f3f09eea24abb4 data/crusadersoffiction/loot_tables/blocks/wysterium_block.json
 f3e8e41d3b2493f160d223f4a3e5edfcb39f5dfb data/crusadersoffiction/loot_tables/blocks/wysterium_ore.json
+6a73b3fff567f7a3868b5855b39c9a935dbc76e7 data/crusadersoffiction/loot_tables/chests/shrine.json
+81e5e7b4f924536d8d120e19555f3336043550f0 data/crusadersoffiction/loot_tables/chests/test.json

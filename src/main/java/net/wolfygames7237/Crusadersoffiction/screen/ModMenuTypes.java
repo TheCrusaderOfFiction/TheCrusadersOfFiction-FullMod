@@ -17,6 +17,12 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<ForgeMenu>> FORGE_MENU =
             registerMenuType(ForgeMenu::new, "forge_menu");
 
+    public static final RegistryObject<MenuType<StructureBuilderMenu>> STRUCTURE_BUILDER_MENU =
+            registerMenuType(StructureBuilderMenu::new, "structure_builder_menu");
+
+    public static final RegistryObject<MenuType<BlockCompressorMenu>> BLOCK_COMPRESSOR_MENU =
+            registerMenuType(BlockCompressorMenu::new, "block_compressor_menu");
+
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

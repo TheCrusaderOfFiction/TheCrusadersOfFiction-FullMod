@@ -17,6 +17,16 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(ForgeBlockEntity::new,
                             ModBlocks.FORGE.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<StructureBuilderBlockEntity>> STRUCTURE_BUILDER_BE =
+            BLOCK_ENTITIES.register("structure_builder_block_entity", () ->
+                    BlockEntityType.Builder.of(StructureBuilderBlockEntity::new,
+                            ModBlocks.STRUCTURE_BUILDER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BlockCompressorBlockEntity>> BLOCK_COMPRESSOR_BE =
+            BLOCK_ENTITIES.register("block_compressor_block_entity", () ->
+                    BlockEntityType.Builder.of(BlockCompressorBlockEntity::new,
+                            ModBlocks.BLOCK_COMPRESSOR.get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

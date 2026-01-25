@@ -14,7 +14,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.wolfygames7237.Crusadersoffiction.blocks.custom.BlockCompressor;
 import net.wolfygames7237.Crusadersoffiction.blocks.custom.Forge;
+import net.wolfygames7237.Crusadersoffiction.blocks.custom.StructureBuilder;
 
 import java.util.function.Supplier;
 
@@ -35,6 +37,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> FORGE = registerBlock("forge",
             () -> new Forge(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> STRUCTURE_BUILDER = registerBlock("structure_builder",
+            () -> new StructureBuilder(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> BLOCK_COMPRESSOR = registerBlock("block_compressor",
+            () -> new BlockCompressor(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

@@ -11,6 +11,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.phys.Vec3;
 import net.wolfygames7237.Crusadersoffiction.entity.ModEntities;
 import net.wolfygames7237.Crusadersoffiction.entity.custom.EnchantedSwordProjectileEntity;
+import net.wolfygames7237.Crusadersoffiction.entity.custom.EnchantedSwordProjectileEntity2;
 
 public class EnchSwordEnchantment extends Enchantment {
     protected EnchSwordEnchantment(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
@@ -48,6 +49,25 @@ public class EnchSwordEnchantment extends Enchantment {
 
         level.addFreshEntity(proj);
     }
+    private void spawn2(
+            ServerLevel level,
+            Player player,
+            EntityType<? extends EnchantedSwordProjectileEntity2> type,
+            Vec3 pos,
+            Vec3 look,
+            float damage,
+            float piercePercent
+    ) {
+        EnchantedSwordProjectileEntity2 proj = type.create(level);
+        if (proj == null) return;
+
+        proj.setOwner(player);
+        proj.setDamage(damage, piercePercent);
+        proj.setPos(pos.x, pos.y, pos.z);
+        proj.shoot(look.x, look.y, look.z, 1.5F, 0.0F);
+
+        level.addFreshEntity(proj);
+    }
     private float getSwordDamage(Player player) {
         double base = player.getAttributeValue(Attributes.ATTACK_DAMAGE);
 
@@ -68,13 +88,13 @@ public class EnchSwordEnchantment extends Enchantment {
         if (pLevel == 1) {
             spawn(level, player, ModEntities.ENCHANTED_SWORD_PROJECTILE.get(),
                     spawnPos, look,
-                    swordDamage * 0.1F, 0.20F);
+                    swordDamage * 0.15F, 0.20F);
         }
 
         if (pLevel == 2) {
-            spawn(level, player, ModEntities.ENCHANTED_SWORD_PROJECTILE.get(),
+            spawn2(level, player, ModEntities.ENCHANTED_SWORD_PROJECTILE2.get(),
                     spawnPos, look,
-                    swordDamage * 0.2F, 0.40F);
+                    swordDamage * 0.25F, 0.40F);
         }
 
         if (pLevel == 3) {
