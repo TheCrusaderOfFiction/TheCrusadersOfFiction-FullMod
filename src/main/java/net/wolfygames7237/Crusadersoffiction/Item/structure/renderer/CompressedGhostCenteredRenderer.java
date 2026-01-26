@@ -23,7 +23,9 @@ import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Mod.EventBusSubscriber(
@@ -31,7 +33,7 @@ import java.util.List;
         value = Dist.CLIENT,
         bus = Mod.EventBusSubscriber.Bus.FORGE
 )
-public class CompressedGhostRenderer {
+public class CompressedGhostCenteredRenderer {
 
     private static BlockPos rotatePos(BlockPos pos, Rotation rotation) {
         return switch (rotation) {
@@ -57,9 +59,10 @@ public class CompressedGhostRenderer {
         Class<?> clazz = item.getClass();
         String className = clazz.getSimpleName();
 
-        // Only CompressedPlacerItem subclasses
-        if (!className.endsWith("PlacerItem") || !className.contains("Compressed")) return;
+        // Only CompressedPlacerCenteredItem subclasses
+        if (!className.endsWith("PlacerCenteredItem") || !className.contains("Compressed")) return;
 
+        // Extract prefix before "Compressed"
         String prefix = className.substring(0, className.indexOf("Compressed")).toLowerCase();
 
         ResourceLocation jsonStructure = new ResourceLocation(
@@ -77,45 +80,76 @@ public class CompressedGhostRenderer {
             default -> Rotation.NONE;
         };
 
-        // 🔽 Y-offset from interface (optional)
-        double yOffset = (item instanceof ICompressedGhostYOffset yItem)
-                ? yItem.getGhostYOffset()
-                : 0.0;
+        // Fetch per-item translation from interface
+        Vec3 classTranslation = (item instanceof ICompressedCenteredItem transItem) ?
+                transItem.getGhostTranslation() : Vec3.ZERO;
 
-        renderGhost(event.getPoseStack(), origin, rotation, jsonStructure, yOffset);
+        renderGhost(event.getPoseStack(), origin, rotation, jsonStructure, classTranslation);
     }
 
-    private static void renderGhost(
-            PoseStack poseStack,
-            BlockPos origin,
-            Rotation rotation,
-            ResourceLocation jsonStructure,
-            double yOffset
-    ) {
+    private static void renderGhost(PoseStack poseStack, BlockPos origin, Rotation rotation,
+                                    ResourceLocation jsonStructure, Vec3 translation) {
         Minecraft mc = Minecraft.getInstance();
         BlockRenderDispatcher dispatcher = mc.getBlockRenderer();
         MultiBufferSource buffer = mc.renderBuffers().bufferSource();
 
-        List<StructureJsonLoader.BlockInfo> blocks =
-                StructureJsonLoader.loadBlockInfos(jsonStructure);
+        List<StructureJsonLoader.BlockInfo> blocks = StructureJsonLoader.loadBlockInfos(jsonStructure);
         if (blocks.isEmpty()) return;
+
+        // Rotate all block positions first
+        List<BlockPos> rotatedPositions = blocks.stream()
+                .map(b -> rotatePos(b.pos(), rotation))
+                .toList();
+
+        // Compute bounding box for rotated structure
+        int minX = rotatedPositions.stream().mapToInt(BlockPos::getX).min().orElse(0);
+        int maxX = rotatedPositions.stream().mapToInt(BlockPos::getX).max().orElse(0);
+        int minZ = rotatedPositions.stream().mapToInt(BlockPos::getZ).min().orElse(0);
+        int maxZ = rotatedPositions.stream().mapToInt(BlockPos::getZ).max().orElse(0);
+
+        // Rotate the translation itself according to player rotation
+        double transX = translation.x;
+        double transZ = translation.z;
+        switch (rotation) {
+            case NONE -> {}
+            case CLOCKWISE_90 -> {
+                double tmp = transX;
+                transX = -transZ;
+                transZ = tmp;
+            }
+            case CLOCKWISE_180 -> {
+                transX = -transX;
+                transZ = -transZ;
+            }
+            case COUNTERCLOCKWISE_90 -> {
+                double tmp = transX;
+                transX = transZ;
+                transZ = -tmp;
+            }
+        }
+
+        double offsetX = -((minX + maxX) / 2.0) + transX;
+        double offsetZ = -((minZ + maxZ) / 2.0) + transZ;
+        double offsetY = -1.0 + translation.y; // downward + per-item Y offset
 
         Vec3 cam = mc.gameRenderer.getMainCamera().getPosition();
 
         poseStack.pushPose();
         poseStack.translate(
-                origin.getX() - cam.x,
-                origin.getY() - cam.y + yOffset,
-                origin.getZ() - cam.z
+                origin.getX() - cam.x + offsetX,
+                origin.getY() - cam.y + offsetY,
+                origin.getZ() - cam.z + offsetZ
         );
 
-        for (StructureJsonLoader.BlockInfo info : blocks) {
-            BlockPos p = rotatePos(info.pos(), rotation);
+        for (int i = 0; i < blocks.size(); i++) {
+            StructureJsonLoader.BlockInfo info = blocks.get(i);
+            BlockPos rotatedPos = rotatedPositions.get(i);
+
             BlockState state = info.block().defaultBlockState();
             BakedModel model = dispatcher.getBlockModel(state);
 
             poseStack.pushPose();
-            poseStack.translate(p.getX(), p.getY(), p.getZ());
+            poseStack.translate(rotatedPos.getX(), rotatedPos.getY(), rotatedPos.getZ());
 
             dispatcher.getModelRenderer().renderModel(
                     poseStack.last(),

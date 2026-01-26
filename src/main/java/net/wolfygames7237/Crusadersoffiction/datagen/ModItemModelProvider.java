@@ -7,10 +7,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -99,7 +102,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItem.ROCK_HATCHET);
         handheldItem(ModItem.ROCK);
 
-        blockItem(ModItem.MOB_FARM_STRUCTURE, Blocks.STONE);
+        blockItem(ModItem.MOB_FARM_STRUCTURE, Blocks.COBBLESTONE_WALL);
+        blockItem(ModItem.IRON_FARM_STRUCTURE, Blocks.IRON_BLOCK);
+        itemItem(ModItem.SUGARCANE_FARM_STRUCTURE, Items.SUGAR_CANE);
+        blockItem(ModItem.BED_PLACER, Blocks.WHITE_WOOL);
 
         generatePlacerModels();
     }
@@ -214,9 +220,48 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(CrusadersOfFiction.MOD_ID,"item/" + item.getId().getPath()));
     }
     private ItemModelBuilder blockItem(RegistryObject<Item> itemReg, Block block) {
+        ResourceLocation blockId = ForgeRegistries.BLOCKS.getKey(block);
+        String path = blockId.getPath();
+        String namespace = blockId.getNamespace();
+
+        // Fence items
+        if (block instanceof FenceBlock) {
+            return withExistingParent(
+                    itemReg.getId().getPath(),
+                    new ResourceLocation("minecraft", "block/fence_inventory")
+            ).texture(
+                    "texture",
+                    new ResourceLocation(namespace, "block/" + path.replace("_fence", ""))
+            );
+        }
+
+        // Wall items - keep 3D shape, point to base block texture
+        if (block instanceof WallBlock) {
+            String baseTexture = path.replace("_wall", "");
+            return withExistingParent(
+                    itemReg.getId().getPath(),
+                    new ResourceLocation("minecraft", "block/wall_inventory")
+            ).texture(
+                    "wall",
+                    new ResourceLocation("minecraft", "block/" + baseTexture)
+            );
+        }
+
+        // Default block item
         return withExistingParent(
                 itemReg.getId().getPath(),
-                new ResourceLocation("minecraft", "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath())
+                new ResourceLocation("minecraft", "block/" + path)
+        );
+    }
+    private ItemModelBuilder itemItem(RegistryObject<Item> itemReg, Item textureItem) {
+        ResourceLocation textureId = ForgeRegistries.ITEMS.getKey(textureItem);
+
+        return withExistingParent(
+                itemReg.getId().getPath(),
+                new ResourceLocation("minecraft", "item/generated")
+        ).texture(
+                "layer0",
+                new ResourceLocation(textureId.getNamespace(), "item/" + textureId.getPath())
         );
     }
 

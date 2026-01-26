@@ -22,6 +22,7 @@ import java.util.*;
 public class StructureBuilderRecipe implements Recipe<SimpleContainer> {
 
     public static final int INPUT_COUNT = 20;
+    public static final RecipeType<StructureBuilderRecipe> Type = ModRecipeTypes.STRUCTURE.get();
 
     private final NonNullList<Ingredient> inputItems;
     private final int[] amounts;
@@ -51,7 +52,7 @@ public class StructureBuilderRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer container, Level level) {
-        System.out.println("matches() called for recipe " + id);
+
 
         if (level.isClientSide) return false;
 
@@ -64,17 +65,13 @@ public class StructureBuilderRecipe implements Recipe<SimpleContainer> {
             ItemStack stack = container.getItem(i);
 
             if (!ingredient.test(stack)) {
-                System.out.println("Ingredient mismatch at slot " + i + " required: " + ingredient + " found: " + stack);
                 return false;
             }
 
             if (stack.getCount() < required) {
-                System.out.println("Not enough items at slot " + i + " required: " + required + " found: " + stack.getCount());
                 return false;
             }
         }
-
-        System.out.println("Recipe matches: " + id);
         return true;
     }
 

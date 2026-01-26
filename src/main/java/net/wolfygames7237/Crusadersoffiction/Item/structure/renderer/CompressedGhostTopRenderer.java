@@ -31,7 +31,7 @@ import java.util.List;
         value = Dist.CLIENT,
         bus = Mod.EventBusSubscriber.Bus.FORGE
 )
-public class CompressedGhostRenderer {
+public class CompressedGhostTopRenderer {
 
     private static BlockPos rotatePos(BlockPos pos, Rotation rotation) {
         return switch (rotation) {
@@ -40,6 +40,17 @@ public class CompressedGhostRenderer {
             case CLOCKWISE_180 -> new BlockPos(-pos.getX(), pos.getY(), -pos.getZ());
             case COUNTERCLOCKWISE_90 -> new BlockPos(pos.getZ(), pos.getY(), -pos.getX());
         };
+    }
+
+    private static int getStructureHeight(List<StructureJsonLoader.BlockInfo> blocks, Rotation rotation) {
+        int maxY = Integer.MIN_VALUE;
+
+        for (StructureJsonLoader.BlockInfo info : blocks) {
+            BlockPos p = rotatePos(info.pos(), rotation);
+            maxY = Math.max(maxY, p.getY());
+        }
+
+        return maxY;
     }
 
     @SubscribeEvent
@@ -58,13 +69,15 @@ public class CompressedGhostRenderer {
         String className = clazz.getSimpleName();
 
         // Only CompressedPlacerItem subclasses
-        if (!className.endsWith("PlacerItem") || !className.contains("Compressed")) return;
+        if (!className.endsWith("PlacerTopItem") || !className.contains("Compressed")) return;
 
+        // Extract the prefix before "Compressed" and make lowercase
         String prefix = className.substring(0, className.indexOf("Compressed")).toLowerCase();
 
+        // Build JSON structure path
         ResourceLocation jsonStructure = new ResourceLocation(
                 "crusadersoffiction",
-                "structures/compressed_64" + prefix + ".json"
+                "structures/compressed_top" + prefix + ".json"
         );
 
         if (!(mc.hitResult instanceof BlockHitResult hit)) return;
@@ -77,21 +90,10 @@ public class CompressedGhostRenderer {
             default -> Rotation.NONE;
         };
 
-        // 🔽 Y-offset from interface (optional)
-        double yOffset = (item instanceof ICompressedGhostYOffset yItem)
-                ? yItem.getGhostYOffset()
-                : 0.0;
-
-        renderGhost(event.getPoseStack(), origin, rotation, jsonStructure, yOffset);
+        renderGhost(event.getPoseStack(), origin, rotation, jsonStructure);
     }
 
-    private static void renderGhost(
-            PoseStack poseStack,
-            BlockPos origin,
-            Rotation rotation,
-            ResourceLocation jsonStructure,
-            double yOffset
-    ) {
+    private static void renderGhost(PoseStack poseStack, BlockPos origin, Rotation rotation, ResourceLocation jsonStructure) {
         Minecraft mc = Minecraft.getInstance();
         BlockRenderDispatcher dispatcher = mc.getBlockRenderer();
         MultiBufferSource buffer = mc.renderBuffers().bufferSource();
@@ -100,17 +102,24 @@ public class CompressedGhostRenderer {
                 StructureJsonLoader.loadBlockInfos(jsonStructure);
         if (blocks.isEmpty()) return;
 
+        // 🔑 Compute top offset
+        int topOffset = getStructureHeight(blocks, rotation);
+
         Vec3 cam = mc.gameRenderer.getMainCamera().getPosition();
 
         poseStack.pushPose();
         poseStack.translate(
                 origin.getX() - cam.x,
-                origin.getY() - cam.y + yOffset,
+                origin.getY() - cam.y,
                 origin.getZ() - cam.z
         );
 
         for (StructureJsonLoader.BlockInfo info : blocks) {
             BlockPos p = rotatePos(info.pos(), rotation);
+
+            // 🔑 Shift DOWN so top aligns with origin
+            p = p.offset(0, -topOffset, 0);
+
             BlockState state = info.block().defaultBlockState();
             BakedModel model = dispatcher.getBlockModel(state);
 

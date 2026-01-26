@@ -7,9 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.wolfygames7237.Crusadersoffiction.Item.custom.ModArmorItem;
-import net.wolfygames7237.Crusadersoffiction.Item.structure.MagmaCompressedPlacerItem;
-import net.wolfygames7237.Crusadersoffiction.Item.structure.MobfarmCompressedPlacerItem;
-import net.wolfygames7237.Crusadersoffiction.Item.structure.StoneCompressedPlacerItem;
+import net.wolfygames7237.Crusadersoffiction.Item.structure.*;
 
 public class ModItem {
     public static final DeferredRegister<Item> ITEMS =
@@ -123,8 +121,18 @@ public class ModItem {
                     () -> new StoneCompressedPlacerItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> MAGMA_BLOCK_PLACER = ITEMS.register("magma_block_placer",
             () -> new MagmaCompressedPlacerItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> DIRT_PLACER = ITEMS.register("dirt_placer",
+            () -> new DirtCompressedPlacerItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> STONE_PLACER = ITEMS.register("stone_placer",
+            () -> new NatstoneCompressedPlacerItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> BED_PLACER = ITEMS.register("bed_placer",
+            () -> new BedCompressedPlacerItem(new Item.Properties().stacksTo(4)));
     public static final RegistryObject<Item> MOB_FARM_STRUCTURE = ITEMS.register("mob_farm_structure",
-            () -> new MobfarmCompressedPlacerItem(new Item.Properties().stacksTo(1)));
+            () -> new MobfarmCompressedPlacerCenteredItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> IRON_FARM_STRUCTURE = ITEMS.register("iron_farm_structure",
+            () -> new IronfarmCompressedPlacerTopItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SUGARCANE_FARM_STRUCTURE = ITEMS.register("sugarcane_farm_structure",
+            () -> new SugarcanefarmCompressedPlacerItem(new Item.Properties().stacksTo(1)));
 
 
     public static void register(IEventBus eventBus) {

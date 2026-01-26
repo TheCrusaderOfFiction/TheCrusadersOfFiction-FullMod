@@ -20,9 +20,9 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 
 import java.util.Optional;
 
-public class MobfarmCompressedPlacerItem extends Item {
+public class NatstoneCompressedPlacerItem extends Item {
 
-    public MobfarmCompressedPlacerItem(Properties properties) {
+    public NatstoneCompressedPlacerItem(Properties properties) {
         super(properties);
     }
 
@@ -62,7 +62,7 @@ public class MobfarmCompressedPlacerItem extends Item {
         StructureTemplateManager structureManager = level.getStructureManager();
 
         ResourceLocation structureId =
-                new ResourceLocation("crusadersoffiction", "compressed_64mobfarm");
+                new ResourceLocation("crusadersoffiction", "compressed_64natstone");
 
         Optional<StructureTemplate> template = structureManager.get(structureId);
         if (template.isEmpty()) return false;
@@ -86,7 +86,7 @@ public class MobfarmCompressedPlacerItem extends Item {
         StructureTemplateManager structureManager = level.getStructureManager();
 
         ResourceLocation structureId =
-                new ResourceLocation("crusadersoffiction", "compressed_64mobfarm");
+                new ResourceLocation("crusadersoffiction", "compressed_64natstone");
 
         Optional<StructureTemplate> template = structureManager.get(structureId);
         if (template.isEmpty()) return;

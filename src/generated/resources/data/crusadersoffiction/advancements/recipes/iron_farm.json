@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crusadersoffiction:mob_farm"
+        "recipe": "crusadersoffiction:iron_farm"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "crusadersoffiction:mob_farm"
+      "crusadersoffiction:iron_farm"
     ]
   },
   "sends_telemetry_event": true

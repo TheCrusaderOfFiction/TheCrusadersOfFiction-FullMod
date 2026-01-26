@@ -1,0 +1,110 @@
+{
+  "type": "crusadersoffiction:structure",
+  "ingredients": [
+    {
+      "count": 16,
+      "ingredient": {
+        "item": "crusadersoffiction:stone_placer"
+      }
+    },
+    {
+      "count": 3,
+      "ingredient": {
+        "item": "crusadersoffiction:dirt_placer"
+      }
+    },
+    {
+      "count": 3,
+      "ingredient": {
+        "item": "crusadersoffiction:bed_placer"
+      }
+    },
+    {
+      "count": 9,
+      "ingredient": {
+        "tag": "minecraft:signs"
+      }
+    },
+    {
+      "count": 8,
+      "ingredient": {
+        "tag": "minecraft:fence_gates"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:iron_shovel"
+      }
+    },
+    {
+      "count": 9,
+      "ingredient": {
+        "item": "minecraft:hopper"
+      }
+    },
+    {
+      "count": 2,
+      "ingredient": {
+        "item": "minecraft:chest"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:lava_bucket"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:iron_farm_structure"
+  }
+}

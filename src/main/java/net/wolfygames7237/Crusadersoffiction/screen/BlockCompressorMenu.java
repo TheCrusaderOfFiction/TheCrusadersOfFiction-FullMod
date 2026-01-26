@@ -4,6 +4,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
+import net.minecraft.world.item.BedItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -12,6 +13,7 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.blocks.entity.BlockCompressorBlockEntity;
 import net.wolfygames7237.Crusadersoffiction.blocks.entity.StructureBuilderBlockEntity;
+import org.jetbrains.annotations.NotNull;
 
 public class BlockCompressorMenu extends AbstractContainerMenu {
 
@@ -35,7 +37,16 @@ public class BlockCompressorMenu extends AbstractContainerMenu {
 
         blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             // INPUT
-            addSlot(new SlotItemHandler(handler, 0, 45, 33));
+            addSlot(new SlotItemHandler(handler, 0, 45, 33) {
+                @Override
+                public int getMaxStackSize(@NotNull ItemStack stack) {
+                    // Allow up to 4 beds in input slot
+                    if (stack.getItem() instanceof BedItem) {
+                        return 4;
+                    }
+                    return super.getMaxStackSize(stack);
+                }
+            });
 
             // OUTPUT
             addSlot(new SlotItemHandler(handler, 1, 139, 33) {
@@ -67,14 +78,16 @@ public class BlockCompressorMenu extends AbstractContainerMenu {
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
-        // Vanilla → TE
+        // Vanilla → TE (player inventory to block entity)
         if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT, false))
+            if (!moveItemStackToCustom(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX,
+                    TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT, false))
                 return ItemStack.EMPTY;
         }
-        // TE → Vanilla
+        // TE → Vanilla (block entity to player inventory)
         else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false))
+            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX,
+                    VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false))
                 return ItemStack.EMPTY;
         } else {
             return ItemStack.EMPTY;
@@ -88,6 +101,49 @@ public class BlockCompressorMenu extends AbstractContainerMenu {
 
         sourceSlot.onTake(player, sourceStack);
         return copyOfSourceStack;
+    }
+    private boolean moveItemStackToCustom(ItemStack stack, int startIndex, int endIndex, boolean reverse) {
+        boolean success = false;
+        int i = reverse ? endIndex - 1 : startIndex;
+
+        while (stack.getCount() > 0 && (reverse ? i >= startIndex : i < endIndex)) {
+            Slot slot = this.slots.get(i);
+            ItemStack slotStack = slot.getItem();
+
+            // Only stack if same item & tags
+            if (!slotStack.isEmpty() && ItemStack.isSameItemSameTags(stack, slotStack)) {
+                int maxStack = slot.getMaxStackSize(stack); // <-- respect custom slot max
+                int space = maxStack - slotStack.getCount();
+                if (space > 0) {
+                    int toMove = Math.min(stack.getCount(), space);
+                    slotStack.grow(toMove);
+                    stack.shrink(toMove);
+                    slot.setChanged();
+                    success = true;
+                }
+            }
+
+            i += reverse ? -1 : 1;
+        }
+
+        // Try to place in empty slot if anything left
+        i = reverse ? endIndex - 1 : startIndex;
+        while (stack.getCount() > 0 && (reverse ? i >= startIndex : i < endIndex)) {
+            Slot slot = this.slots.get(i);
+            if (slot.getItem().isEmpty() && slot.mayPlace(stack)) {
+                int maxStack = slot.getMaxStackSize(stack);
+                ItemStack toInsert = stack.copy();
+                toInsert.setCount(Math.min(stack.getCount(), maxStack));
+                slot.set(toInsert);
+                stack.shrink(toInsert.getCount());
+                slot.setChanged();
+                success = true;
+            }
+
+            i += reverse ? -1 : 1;
+        }
+
+        return success;
     }
 
     @Override

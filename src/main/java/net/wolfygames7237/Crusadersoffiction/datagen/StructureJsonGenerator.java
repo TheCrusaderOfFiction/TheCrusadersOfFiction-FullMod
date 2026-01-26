@@ -60,6 +60,7 @@ public class StructureJsonGenerator implements DataProvider {
 
                 Files.list(inputDir)
                         .filter(path -> path.toString().endsWith(".nbt"))
+                        .filter(path -> !path.getFileName().toString().contains("_exclude"))
                         .forEach(nbtPath -> {
                             try (InputStream in = Files.newInputStream(nbtPath)) {
                                 CompoundTag nbt = NbtIo.readCompressed(in);

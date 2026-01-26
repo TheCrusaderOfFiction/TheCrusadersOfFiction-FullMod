@@ -1,0 +1,14 @@
+{
+  "type": "crusadersoffiction:compressor",
+  "ingredients": [
+    {
+      "count": 64,
+      "ingredient": {
+        "item": "minecraft:magma_block"
+      }
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:magma_block_placer"
+  }
+}

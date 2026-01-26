@@ -564,13 +564,56 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .setIngredient(5, Ingredient.of(Blocks.HOPPER.asItem()), 5)
                 .setIngredient(6, Ingredient.of(Items.WATER_BUCKET), 1)
                 .setIngredient(7, Ingredient.of(Items.WATER_BUCKET), 1)
-                .unlockedBy("has_stone", has(ItemTags.STONE_TOOL_MATERIALS))
+                .unlockedBy("has_structure_builder", has(ModBlocks.STRUCTURE_BUILDER.get()))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "mob_farm"));
+        new StructureBuilderRecipeBuilder(ModItem.SUGARCANE_FARM_STRUCTURE.get(), 1)
+                .setIngredient(0, Ingredient.of(Blocks.COBBLESTONE),64)
+                .setIngredient(1, Ingredient.of(Blocks.PISTON),18)
+                .setIngredient(2, Ingredient.of(Blocks.OBSERVER), 18)
+                .setIngredient(3, Ingredient.of(Items.REDSTONE), 39)
+                .setIngredient(4, Ingredient.of(Blocks.CHEST.asItem()), 4)
+                .setIngredient(5, Ingredient.of(Blocks.HOPPER.asItem()), 3)
+                .setIngredient(6, Ingredient.of(Items.WATER_BUCKET), 1)
+                .setIngredient(7, Ingredient.of(Items.WATER_BUCKET), 1)
+                .unlockedBy("has_structure_builder", has(ModBlocks.STRUCTURE_BUILDER.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "sugarcane_farm"));
+        new StructureBuilderRecipeBuilder(ModItem.IRON_FARM_STRUCTURE.get(), 1)
+                .setIngredient(0, Ingredient.of(ModItem.STONE_PLACER.get()),16)
+                .setIngredient(1, Ingredient.of(ModItem.DIRT_PLACER.get()), 3)
+                .setIngredient(2, Ingredient.of(ModItem.BED_PLACER.get()), 3)
+                .setIngredient(3, Ingredient.of(ItemTags.SIGNS), 9)
+                .setIngredient(4, Ingredient.of(ItemTags.FENCE_GATES), 8)
+                .setIngredient(5, Ingredient.of(Items.IRON_SHOVEL), 1)
+                .setIngredient(6, Ingredient.of(Blocks.HOPPER.asItem()), 9)
+                .setIngredient(7, Ingredient.of(Blocks.CHEST.asItem()), 2)
+                .setIngredient(8, Ingredient.of(Items.WATER_BUCKET), 1)
+                .setIngredient(9, Ingredient.of(Items.WATER_BUCKET), 1)
+                .setIngredient(10, Ingredient.of(Items.LAVA_BUCKET), 1)
+                .unlockedBy("has_structure_builder", has(ModBlocks.STRUCTURE_BUILDER.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_farm"));
+
+
 
         new BlockCompressorRecipeBuilder(ModItem.COBBLESTONE_PLACER.get(), 1)
                 .setIngredient(0, Ingredient.of(Items.COBBLESTONE),64)
                 .unlockedBy("has_compressor", has(ModBlocks.BLOCK_COMPRESSOR.get()))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "compressed_cobble"));
+        new BlockCompressorRecipeBuilder(ModItem.MAGMA_BLOCK_PLACER.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.MAGMA_BLOCK),64)
+                .unlockedBy("has_compressor", has(ModBlocks.BLOCK_COMPRESSOR.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "compressed_magma"));
+        new BlockCompressorRecipeBuilder(ModItem.DIRT_PLACER.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.DIRT),64)
+                .unlockedBy("has_compressor", has(ModBlocks.BLOCK_COMPRESSOR.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "compressed_dirt"));
+        new BlockCompressorRecipeBuilder(ModItem.BED_PLACER.get(), 1)
+                .setIngredient(0, Ingredient.of(ItemTags.BEDS),4)
+                .unlockedBy("has_compressor", has(ModBlocks.BLOCK_COMPRESSOR.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "compressed_bed"));
+        new BlockCompressorRecipeBuilder(ModItem.STONE_PLACER.get(), 1)
+                .setIngredient(0, Ingredient.of(Items.STONE),64)
+                .unlockedBy("has_compressor", has(ModBlocks.BLOCK_COMPRESSOR.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "compressed_stone"));
 
 
 

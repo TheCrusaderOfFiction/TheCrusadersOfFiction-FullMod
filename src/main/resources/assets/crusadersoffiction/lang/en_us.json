@@ -61,7 +61,12 @@
 
   "item.crusadersoffiction.cobblestone_placer": "Compressed Cobblestone",
   "item.crusadersoffiction.magma_block_placer": "Compressed Magma Block",
+  "item.crusadersoffiction.bed_placer": "Compressed Bed",
+  "item.crusadersoffiction.dirt_placer": "Compressed Dirt Block",
+  "item.crusadersoffiction.stone_placer": "Compressed Stone Block",
   "item.crusadersoffiction.mob_farm_structure": "Mob Farm",
+  "item.crusadersoffiction.iron_farm_structure": "Iron Farm",
+  "item.crusadersoffiction.sugarcane_farm_structure": "Sugarcane Farm",
 
   "creativetab.crusader_mod": "Crusaders Mod",
   "creativetab.crusader_progress": "Crusaders: Progress Reimagined"

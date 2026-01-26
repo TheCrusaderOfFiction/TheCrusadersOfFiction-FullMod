@@ -1,0 +1,14 @@
+{
+  "type": "crusadersoffiction:compressor",
+  "ingredients": [
+    {
+      "count": 64,
+      "ingredient": {
+        "item": "minecraft:dirt"
+      }
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:dirt_placer"
+  }
+}

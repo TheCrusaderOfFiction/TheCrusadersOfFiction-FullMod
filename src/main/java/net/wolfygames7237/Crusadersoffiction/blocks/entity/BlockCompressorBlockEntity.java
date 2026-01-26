@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.BedItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -76,6 +77,18 @@ public class BlockCompressorBlockEntity extends BlockEntity implements MenuProvi
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return slot == INPUT_SLOT;
         }
+
+        @Override
+        public int getSlotLimit(int slot) {
+            ItemStack stack = getStackInSlot(slot);
+
+            // Beds stack to 4 inside this block only
+            if (!stack.isEmpty() && stack.getItem() instanceof BedItem) {
+                return 4;
+            }
+
+            return super.getSlotLimit(slot);
+        }
     };
 
     /* ----------------- CONSTRUCTOR ----------------- */
@@ -96,17 +109,16 @@ public class BlockCompressorBlockEntity extends BlockEntity implements MenuProvi
     }
 
     private void tickCrafting() {
+        if (level == null || level.isClientSide) return;
+
         ItemStack input = itemHandler.getStackInSlot(INPUT_SLOT);
 
-        // FAIL immediately if input slot is empty
         if (input.isEmpty()) {
             progress = 0;
             return;
         }
 
         Optional<BlockCompressorRecipe> recipeOpt = getCurrentRecipe();
-
-        // No valid recipe
         if (recipeOpt.isEmpty()) {
             progress = 0;
             return;
@@ -114,28 +126,24 @@ public class BlockCompressorBlockEntity extends BlockEntity implements MenuProvi
 
         BlockCompressorRecipe recipe = recipeOpt.get();
 
-        // Only craft if input matches recipe AND output has space
-        if (!recipe.matches(new SimpleContainer(input), level) ||
-                !canInsertIntoOutput(recipe.getResultItem(level.registryAccess()))) {
+        ItemStack result = recipe.getResultItem(level.registryAccess());
+        if (!canInsertIntoOutput(result)) {
             progress = 0;
             return;
         }
 
-        // Increment progress
         progress++;
 
-        // Finish crafting
         if (progress >= MAX_PROGRESS) {
             int required = recipe.getRequiredAmounts()[0];
+
             itemHandler.extractItem(INPUT_SLOT, required, false);
 
-            ItemStack output = itemHandler.getStackInSlot(OUTPUT_SLOT);
-            ItemStack result = recipe.getResultItem(level.registryAccess());
-
-            if (output.isEmpty()) {
+            ItemStack outputSlot = itemHandler.getStackInSlot(OUTPUT_SLOT);
+            if (outputSlot.isEmpty()) {
                 itemHandler.setStackInSlot(OUTPUT_SLOT, result.copy());
             } else {
-                output.grow(result.getCount());
+                outputSlot.grow(result.getCount());
             }
 
             progress = 0;
@@ -147,20 +155,29 @@ public class BlockCompressorBlockEntity extends BlockEntity implements MenuProvi
 
     private boolean canInsertIntoOutput(ItemStack stack) {
         ItemStack output = itemHandler.getStackInSlot(OUTPUT_SLOT);
+
         if (output.isEmpty()) return true;
-        return ItemStack.isSameItemSameTags(output, stack)
-                && output.getCount() + stack.getCount() <= output.getMaxStackSize();
+
+        if (!ItemStack.isSameItemSameTags(output, stack)) return false;
+
+        int slotLimit = itemHandler.getSlotLimit(OUTPUT_SLOT);
+        return output.getCount() + stack.getCount() <= slotLimit;
     }
 
     private Optional<BlockCompressorRecipe> getCurrentRecipe() {
-        if (level == null) return Optional.empty();
+        if (level == null || level.isClientSide) return Optional.empty();
 
-        SimpleContainer inv = new SimpleContainer(1);
-        inv.setItem(0, itemHandler.getStackInSlot(INPUT_SLOT));
+        SimpleContainer container = new SimpleContainer(1);
+        container.setItem(0, itemHandler.getStackInSlot(INPUT_SLOT));
 
-        return level.getRecipeManager()
-                .getRecipeFor(ModRecipeTypes.COMPRESSOR.get(), inv, level)
-                .filter(recipe -> recipe.matches(inv, level)); // only valid if matches
+        for (BlockCompressorRecipe recipe :
+                level.getRecipeManager().getAllRecipesFor(ModRecipeTypes.COMPRESSOR.get())) {
+
+            if (recipe.matches(container, level)) {
+                return Optional.of(recipe);
+            }
+        }
+        return Optional.empty();
     }
 
     /* ----------------- SAVE / LOAD ----------------- */

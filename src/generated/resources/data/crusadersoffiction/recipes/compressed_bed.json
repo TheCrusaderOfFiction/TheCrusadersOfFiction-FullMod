@@ -1,0 +1,14 @@
+{
+  "type": "crusadersoffiction:compressor",
+  "ingredients": [
+    {
+      "count": 4,
+      "ingredient": {
+        "tag": "minecraft:beds"
+      }
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:bed_placer"
+  }
+}

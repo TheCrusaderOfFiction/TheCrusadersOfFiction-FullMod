@@ -15,6 +15,7 @@ import net.minecraft.world.level.Level;
 public class BlockCompressorRecipe implements Recipe<SimpleContainer> {
 
     public static final int INPUT_COUNT = 1;
+    public static final RecipeType<BlockCompressorRecipe> Type = ModRecipeTypes.COMPRESSOR.get();
 
     private final NonNullList<Ingredient> ingredients;
     private final int[] requiredAmounts;
@@ -37,18 +38,25 @@ public class BlockCompressorRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer container, Level level) {
+
+
         if (level.isClientSide) return false;
 
         for (int i = 0; i < INPUT_COUNT; i++) {
             Ingredient ingredient = ingredients.get(i);
             int required = requiredAmounts[i];
 
-            // FAIL if recipe expects an ingredient but input slot is empty
-            ItemStack stack = container.getItem(i);
-            if (ingredient.isEmpty() || required <= 0) continue; // still skip empty ingredients
-            if (stack.isEmpty()) return false;                  // <-- ADD THIS LINE
+            if (ingredient.isEmpty() || required <= 0) continue;
 
-            if (!ingredient.test(stack) || stack.getCount() < required) return false;
+            ItemStack stack = container.getItem(i);
+
+            if (!ingredient.test(stack)) {
+                return false;
+            }
+
+            if (stack.getCount() < required) {
+                return false;
+            }
         }
         return true;
     }
@@ -111,12 +119,13 @@ public class BlockCompressorRecipe implements Recipe<SimpleContainer> {
 
                 JsonObject entry = array.get(i).getAsJsonObject();
                 if (entry.has("ingredient") && !entry.get("ingredient").isJsonNull()) {
-                    ingredients.set(i, ingredients.set(i, Ingredient.fromJson(entry.get("ingredient"))));
+                    ingredients.set(i, Ingredient.fromJson(entry.get("ingredient")));
                     amounts[i] = entry.has("count") ? entry.get("count").getAsInt() : 1;
                 } else {
                     ingredients.set(i, Ingredient.EMPTY);
                     amounts[i] = 0;
                 }
+
             }
 
             return new BlockCompressorRecipe(id, output, ingredients, amounts);

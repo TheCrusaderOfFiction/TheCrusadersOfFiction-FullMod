@@ -1,0 +1,104 @@
+{
+  "type": "crusadersoffiction:structure",
+  "ingredients": [
+    {
+      "count": 64,
+      "ingredient": {
+        "item": "minecraft:cobblestone"
+      }
+    },
+    {
+      "count": 18,
+      "ingredient": {
+        "item": "minecraft:piston"
+      }
+    },
+    {
+      "count": 18,
+      "ingredient": {
+        "item": "minecraft:observer"
+      }
+    },
+    {
+      "count": 39,
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    {
+      "count": 4,
+      "ingredient": {
+        "item": "minecraft:chest"
+      }
+    },
+    {
+      "count": 3,
+      "ingredient": {
+        "item": "minecraft:hopper"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
+    }
+  ],
+  "output": {
+    "item": "crusadersoffiction:sugarcane_farm_structure"
+  }
+}

@@ -1,6 +1,5 @@
 package net.wolfygames7237.Crusadersoffiction.Item;
 
-import net.minecraft.world.level.block.Blocks;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.minecraft.core.registries.Registries;
@@ -10,7 +9,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-import net.wolfygames7237.Crusadersoffiction.util.ModTags;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -46,7 +44,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.VOIDESSANCE.get());
                         output.accept(ModItem.COBBLESTONE_PLACER.get());
                         output.accept(ModItem.MAGMA_BLOCK_PLACER.get());
+                        output.accept(ModItem.BED_PLACER.get());
+                        output.accept(ModItem.DIRT_PLACER.get());
+                        output.accept(ModItem.STONE_PLACER.get());
                         output.accept(ModItem.MOB_FARM_STRUCTURE.get());
+                        output.accept(ModItem.IRON_FARM_STRUCTURE.get());
+                        output.accept(ModItem.SUGARCANE_FARM_STRUCTURE.get());
                         output.accept(ModBlocks.STRUCTURE_BUILDER.get());
                         output.accept(ModBlocks.BLOCK_COMPRESSOR.get());
                     })

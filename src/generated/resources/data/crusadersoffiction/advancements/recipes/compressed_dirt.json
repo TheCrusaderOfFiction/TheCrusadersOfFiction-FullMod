@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_structure_builder": {
+    "has_compressor": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crusadersoffiction:structure_builder"
+              "crusadersoffiction:block_compressor"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crusadersoffiction:mob_farm"
+        "recipe": "crusadersoffiction:compressed_dirt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_structure_builder",
+      "has_compressor",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crusadersoffiction:mob_farm"
+      "crusadersoffiction:compressed_dirt"
     ]
   },
   "sends_telemetry_event": true
