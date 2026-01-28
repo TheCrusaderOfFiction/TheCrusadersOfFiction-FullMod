@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.BedItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -25,6 +26,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
+import net.wolfygames7237.Crusadersoffiction.Item.structure.StoneCompressedPlacerItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.recipe.ForgeRecipe;
 import net.wolfygames7237.Crusadersoffiction.recipe.ModRecipeTypes;
@@ -75,6 +77,20 @@ public class StructureBuilderBlockEntity extends BlockEntity implements MenuProv
                 }
             }
             return super.extractItem(slot, amount, simulate);
+        }
+        @Override
+        public int getSlotLimit(int slot) {
+            ItemStack stack = getStackInSlot(slot);
+
+            // Beds stack to 4 inside this block only
+            if (!stack.isEmpty() && stack.getItem() instanceof StoneCompressedPlacerItem) {
+                return 32;
+            }
+            if (!stack.isEmpty() && stack.getItem() == Items.WATER_BUCKET) {
+                return 2;
+            }
+
+            return super.getSlotLimit(slot);
         }
     };
 

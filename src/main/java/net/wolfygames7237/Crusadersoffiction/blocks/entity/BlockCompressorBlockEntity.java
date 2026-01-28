@@ -22,6 +22,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.wolfygames7237.Crusadersoffiction.Item.structure.StoneCompressedPlacerItem;
 import net.wolfygames7237.Crusadersoffiction.recipe.ModRecipeTypes;
 import net.wolfygames7237.Crusadersoffiction.recipe.BlockCompressorRecipe;
 import net.wolfygames7237.Crusadersoffiction.screen.BlockCompressorMenu;

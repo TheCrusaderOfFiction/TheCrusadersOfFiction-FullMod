@@ -125,6 +125,8 @@ public class ModItem {
             () -> new DirtCompressedPlacerItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> STONE_PLACER = ITEMS.register("stone_placer",
             () -> new NatstoneCompressedPlacerItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> OAK_LEAVES_PLACER = ITEMS.register("oak_leaves_placer",
+            () -> new OakleavesCompressedPlacerItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> BED_PLACER = ITEMS.register("bed_placer",
             () -> new BedCompressedPlacerItem(new Item.Properties().stacksTo(4)));
     public static final RegistryObject<Item> MOB_FARM_STRUCTURE = ITEMS.register("mob_farm_structure",
@@ -133,6 +135,8 @@ public class ModItem {
             () -> new IronfarmCompressedPlacerTopItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SUGARCANE_FARM_STRUCTURE = ITEMS.register("sugarcane_farm_structure",
             () -> new SugarcanefarmCompressedPlacerItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> MAGMA_FARM_STRUCTURE = ITEMS.register("magma_farm_structure",
+            () -> new MagmafarmCompressedPlacerCenteredItem(new Item.Properties().stacksTo(1)));
 
 
     public static void register(IEventBus eventBus) {

@@ -2,13 +2,7 @@
   "type": "crusadersoffiction:structure",
   "ingredients": [
     {
-      "count": 16,
-      "ingredient": {
-        "item": "crusadersoffiction:cobblestone_placer"
-      }
-    },
-    {
-      "count": 3,
+      "count": 19,
       "ingredient": {
         "item": "crusadersoffiction:cobblestone_placer"
       }
@@ -38,16 +32,18 @@
       }
     },
     {
-      "count": 1,
+      "count": 2,
       "ingredient": {
         "item": "minecraft:water_bucket"
       }
     },
     {
       "count": 1,
-      "ingredient": {
-        "item": "minecraft:water_bucket"
-      }
+      "ingredient": {}
+    },
+    {
+      "count": 1,
+      "ingredient": {}
     },
     {
       "count": 1,

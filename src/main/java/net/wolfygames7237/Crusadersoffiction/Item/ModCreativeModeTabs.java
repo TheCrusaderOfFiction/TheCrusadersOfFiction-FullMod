@@ -47,9 +47,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.BED_PLACER.get());
                         output.accept(ModItem.DIRT_PLACER.get());
                         output.accept(ModItem.STONE_PLACER.get());
+                        output.accept(ModItem.OAK_LEAVES_PLACER.get());
                         output.accept(ModItem.MOB_FARM_STRUCTURE.get());
                         output.accept(ModItem.IRON_FARM_STRUCTURE.get());
                         output.accept(ModItem.SUGARCANE_FARM_STRUCTURE.get());
+                        output.accept(ModItem.MAGMA_FARM_STRUCTURE.get());
                         output.accept(ModBlocks.STRUCTURE_BUILDER.get());
                         output.accept(ModBlocks.BLOCK_COMPRESSOR.get());
                     })

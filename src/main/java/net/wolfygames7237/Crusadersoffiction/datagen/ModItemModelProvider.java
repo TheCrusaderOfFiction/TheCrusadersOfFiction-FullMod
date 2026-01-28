@@ -105,7 +105,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModItem.MOB_FARM_STRUCTURE, Blocks.COBBLESTONE_WALL);
         blockItem(ModItem.IRON_FARM_STRUCTURE, Blocks.IRON_BLOCK);
         itemItem(ModItem.SUGARCANE_FARM_STRUCTURE, Items.SUGAR_CANE);
+        itemItem(ModItem.MAGMA_FARM_STRUCTURE, Items.MAGMA_CREAM);
         blockItem(ModItem.BED_PLACER, Blocks.WHITE_WOOL);
+
 
         generatePlacerModels();
     }

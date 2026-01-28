@@ -50,13 +50,7 @@
       }
     },
     {
-      "count": 1,
-      "ingredient": {
-        "item": "minecraft:water_bucket"
-      }
-    },
-    {
-      "count": 1,
+      "count": 2,
       "ingredient": {
         "item": "minecraft:water_bucket"
       }
@@ -66,6 +60,10 @@
       "ingredient": {
         "item": "minecraft:lava_bucket"
       }
+    },
+    {
+      "count": 1,
+      "ingredient": {}
     },
     {
       "count": 1,

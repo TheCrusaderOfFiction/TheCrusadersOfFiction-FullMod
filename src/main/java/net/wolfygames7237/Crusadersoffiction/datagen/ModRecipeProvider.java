@@ -27,6 +27,7 @@ import java.util.function.Consumer;
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     private static final List<ItemLike> WYSTERIUM_SMELTABLES = List.of(ModItem.RAWWYSTERIUM.get(),
             ModBlocks.WYSTERIUM_ORE.get());
+    private static final List<ItemLike> COBBLESTONE_PLACER = List.of(ModItem.COBBLESTONE_PLACER.get());
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -36,6 +37,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         oreSmelting(pWriter, WYSTERIUM_SMELTABLES, RecipeCategory.MISC, ModItem.WYSTERIUMNUGGET.get(), 70f, 32000, "wysterium");
         oreBlasting(pWriter, WYSTERIUM_SMELTABLES, RecipeCategory.MISC, ModItem.WYSTERIUMNUGGET.get(), 70f, 6400, "wysterium");
+        oreSmelting(pWriter, COBBLESTONE_PLACER, RecipeCategory.MISC, ModItem.STONE_PLACER.get(), 0f, 200, "cobblestone");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItem.WYSTERIUM.get())
                 .pattern("SSS")
@@ -439,6 +441,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('W', Items.COPPER_INGOT)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BLOCK_COMPRESSOR.get())
+                .pattern("SPS")
+                .pattern("S S")
+                .pattern("SSS")
+                .define('S', Blocks.DEEPSLATE)
+                .define('P', Blocks.PISTON)
+                .unlockedBy(getHasName(Blocks.COBBLED_DEEPSLATE), has(Blocks.COBBLED_DEEPSLATE))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STRUCTURE_BUILDER.get())
+                .pattern("IR ")
+                .pattern("I  ")
+                .pattern("SSS")
+                .define('S', Items.STICK)
+                .define('W', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(pWriter);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItem.COPPERNUGGET.get(), 9)
                 .requires(Items.COPPER_INGOT)
@@ -556,14 +575,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "diamond_sword_top_left_forge"));
 
         new StructureBuilderRecipeBuilder(ModItem.MOB_FARM_STRUCTURE.get(), 1)
-                .setIngredient(0, Ingredient.of(ModItem.COBBLESTONE_PLACER.get()),16)
-                .setIngredient(1, Ingredient.of(ModItem.COBBLESTONE_PLACER.get()),3)
-                .setIngredient(2, Ingredient.of(ItemTags.TRAPDOORS), 64)
-                .setIngredient(3, Ingredient.of(ItemTags.TRAPDOORS), 36)
-                .setIngredient(4, Ingredient.of(Blocks.CHEST.asItem()), 2)
-                .setIngredient(5, Ingredient.of(Blocks.HOPPER.asItem()), 5)
-                .setIngredient(6, Ingredient.of(Items.WATER_BUCKET), 1)
-                .setIngredient(7, Ingredient.of(Items.WATER_BUCKET), 1)
+                .setIngredient(0, Ingredient.of(ModItem.COBBLESTONE_PLACER.get()),19)
+                .setIngredient(1, Ingredient.of(ItemTags.TRAPDOORS), 64)
+                .setIngredient(2, Ingredient.of(ItemTags.TRAPDOORS), 36)
+                .setIngredient(3, Ingredient.of(Blocks.CHEST.asItem()), 2)
+                .setIngredient(4, Ingredient.of(Blocks.HOPPER.asItem()), 5)
+                .setIngredient(5, Ingredient.of(Items.WATER_BUCKET), 2)
                 .unlockedBy("has_structure_builder", has(ModBlocks.STRUCTURE_BUILDER.get()))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "mob_farm"));
         new StructureBuilderRecipeBuilder(ModItem.SUGARCANE_FARM_STRUCTURE.get(), 1)
@@ -573,8 +590,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .setIngredient(3, Ingredient.of(Items.REDSTONE), 39)
                 .setIngredient(4, Ingredient.of(Blocks.CHEST.asItem()), 4)
                 .setIngredient(5, Ingredient.of(Blocks.HOPPER.asItem()), 3)
-                .setIngredient(6, Ingredient.of(Items.WATER_BUCKET), 1)
-                .setIngredient(7, Ingredient.of(Items.WATER_BUCKET), 1)
+                .setIngredient(6, Ingredient.of(Items.WATER_BUCKET), 2)
                 .unlockedBy("has_structure_builder", has(ModBlocks.STRUCTURE_BUILDER.get()))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "sugarcane_farm"));
         new StructureBuilderRecipeBuilder(ModItem.IRON_FARM_STRUCTURE.get(), 1)
@@ -586,11 +602,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .setIngredient(5, Ingredient.of(Items.IRON_SHOVEL), 1)
                 .setIngredient(6, Ingredient.of(Blocks.HOPPER.asItem()), 9)
                 .setIngredient(7, Ingredient.of(Blocks.CHEST.asItem()), 2)
-                .setIngredient(8, Ingredient.of(Items.WATER_BUCKET), 1)
-                .setIngredient(9, Ingredient.of(Items.WATER_BUCKET), 1)
-                .setIngredient(10, Ingredient.of(Items.LAVA_BUCKET), 1)
+                .setIngredient(8, Ingredient.of(Items.WATER_BUCKET), 2)
+                .setIngredient(9, Ingredient.of(Items.LAVA_BUCKET), 1)
                 .unlockedBy("has_structure_builder", has(ModBlocks.STRUCTURE_BUILDER.get()))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "iron_farm"));
+        new StructureBuilderRecipeBuilder(ModItem.MAGMA_FARM_STRUCTURE.get(), 1)
+                .setIngredient(0, Ingredient.of(ModItem.COBBLESTONE_PLACER.get()),32)
+                .setIngredient(1, Ingredient.of(ModItem.DIRT_PLACER.get()), 2)
+                .setIngredient(2, Ingredient.of(Items.SWEET_BERRIES), 64)
+                .setIngredient(3, Ingredient.of(Blocks.IRON_BLOCK.asItem()), 4)
+                .setIngredient(4, Ingredient.of(Items.RAIL), 64)
+                .setIngredient(5, Ingredient.of(Items.POWERED_RAIL), 6)
+                .setIngredient(6, Ingredient.of(Items.REDSTONE), 10)
+                .setIngredient(7, Ingredient.of(Blocks.PUMPKIN.asItem()), 1)
+                .setIngredient(8, Ingredient.of(Blocks.HOPPER.asItem()), 3)
+                .setIngredient(9, Ingredient.of(Blocks.CHEST.asItem()), 4)
+                .unlockedBy("has_structure_builder", has(ModBlocks.STRUCTURE_BUILDER.get()))
+                .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "magma_farm"));
 
 
 
@@ -614,6 +642,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .setIngredient(0, Ingredient.of(Items.STONE),64)
                 .unlockedBy("has_compressor", has(ModBlocks.BLOCK_COMPRESSOR.get()))
                 .save(pWriter, new ResourceLocation(CrusadersOfFiction.MOD_ID, "compressed_stone"));
+
 
 
 

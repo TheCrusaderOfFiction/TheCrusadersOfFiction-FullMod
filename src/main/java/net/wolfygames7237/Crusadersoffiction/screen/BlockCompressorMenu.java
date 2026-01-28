@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
+import net.wolfygames7237.Crusadersoffiction.Item.structure.StoneCompressedPlacerItem;
 import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.blocks.entity.BlockCompressorBlockEntity;
 import net.wolfygames7237.Crusadersoffiction.blocks.entity.StructureBuilderBlockEntity;
