@@ -48,6 +48,9 @@
   "item.crusadersoffiction.rock": "Rock",
   "item.crusadersoffiction.rock_hatchet": "Rock Hatchet",
   "item.crusadersoffiction.fiber": "fiber",
+  "item.crusadersoffiction.jungle_seeds": "Jungle Seeds",
+  "item.crusadersoffiction.mushroom_seeds": "Mushroom Grass Seeds",
+
 
   "block.crusadersoffiction.wysterium_ore": "Wysterium Ore",
   "block.crusadersoffiction.wysterium_block": "Wysterium Block",
@@ -70,7 +73,21 @@
   "item.crusadersoffiction.sugarcane_farm_structure": "Sugarcane Farm",
   "item.crusadersoffiction.magma_farm_structure": "Magma Farm",
 
+  "block.crusadersoffiction.mahogany_log": "Mahogany Log",
+  "block.crusadersoffiction.mahogany_planks": "Mahogany Planks",
+  "block.crusadersoffiction.mahogany_wood": "Mahogany Wood",
+  "block.crusadersoffiction.stripped_mahogany_log": "Stripped Mahogany Log",
+  "block.crusadersoffiction.stripped_mahogany_wood": "Stripped Mahogany Wood",
+  "block.crusadersoffiction.mahogany_leaves": "Mahogany Leaves",
+  "block.crusadersoffiction.mahogany_sapling": "Mahogany Sapling",
+  "block.crusadersoffiction.jungle_grass_block": "Jungle Grass Block",
+  "block.crusadersoffiction.jungle_grass": "Jungle Grass",
+  "block.crusadersoffiction.glowing_mushroom": "Glowing Mushroom",
+  "block.crusadersoffiction.glowing_mushroom_block": "Glowing Mushroom Block",
+
+
   "creativetab.crusader_mod": "Crusaders Mod",
-  "creativetab.crusader_progress": "Crusaders: Progress Reimagined"
+  "creativetab.crusader_progress": "Crusaders: Progress Reimagined",
+  "creativetab.craftable_structures": "Craftable Structures"
 
 }

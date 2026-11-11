@@ -32,7 +32,7 @@ public class MobfarmCompressedPlacerCenteredItem extends Item implements ICompre
     @Override
     public Vec3 getGhostTranslation() {
         // Optional fine-tuning translation (X, Y, Z)
-        return new Vec3(3, 0, 5);
+        return new Vec3(2, 0, 4);
     }
 
     @Override

@@ -2,5 +2,7 @@
   "remove": [
     "#minecraft:iron_ores"
   ],
-  "values": []
+  "values": [
+    "minecraft:snow_block"
+  ]
 }

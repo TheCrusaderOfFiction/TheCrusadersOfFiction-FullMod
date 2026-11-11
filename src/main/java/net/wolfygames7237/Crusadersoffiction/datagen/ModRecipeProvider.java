@@ -19,6 +19,7 @@ import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 import net.wolfygames7237.Crusadersoffiction.datagen.custom.BlockCompressorRecipeBuilder;
 import net.wolfygames7237.Crusadersoffiction.datagen.custom.ForgeRecipeBuilder;
 import net.wolfygames7237.Crusadersoffiction.datagen.custom.StructureBuilderRecipeBuilder;
+import net.wolfygames7237.Crusadersoffiction.util.ModTags;
 
 
 import java.util.List;
@@ -453,9 +454,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("IR ")
                 .pattern("I  ")
                 .pattern("SSS")
-                .define('S', Items.STICK)
-                .define('W', Items.COPPER_INGOT)
-                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .define('S', Blocks.DEEPSLATE)
+                .define('I', Items.IRON_INGOT)
+                .define('R', Items.REDSTONE)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAHOGANY_WOOD.get(), 3)
+                .pattern("WW")
+                .pattern("WW")
+                .define('W', ModBlocks.MAHOGANY_LOG.get())
+                .unlockedBy(getHasName(ModBlocks.MAHOGANY_LOG.get()), has(ModBlocks.MAHOGANY_LOG.get()))
                 .save(pWriter);
 
 
@@ -467,6 +475,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.WYSTERIUM_BLOCK.get())
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(pWriter, "wysterium_from_block");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.MAHOGANY_PLANKS.get(), 4)
+                .requires(ModTags.Items.MAHOGANY_WOOD)
+                .unlockedBy(getHasName(ModBlocks.MAHOGANY_LOG.get()), has(ModBlocks.MAHOGANY_LOG.get()))
+                .save(pWriter);
 
         new ForgeRecipeBuilder(ModItem.IRON_PICKAXE_HEAD.get(), 1)
                 .setIngredient(0, Ingredient.of(Items.IRON_INGOT))

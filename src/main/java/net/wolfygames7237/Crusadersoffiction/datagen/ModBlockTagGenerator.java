@@ -27,8 +27,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.WYSTERIUM_ORE.get(),
                         ModBlocks.WYSTERIUM_BLOCK.get(),
-                        Blocks.BEDROCK
+                        Blocks.BEDROCK,
+                        Blocks.BLUE_ICE
                         );
+
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(Blocks.SNOW_BLOCK);
 
         for (Block block : BuiltInRegistries.BLOCK) {
             // If a block currently requires a tool, bump it up
@@ -44,13 +48,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.NEEDS_WOOD_TOOL);
 
         this.tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(Blocks.SNOW_BLOCK)
                 .remove(BlockTags.IRON_ORES);
 
         this.tag(ModTags.Blocks.NEEDS_COPPER_TOOL)
                 .addTag(BlockTags.IRON_ORES);
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.FORGE.get());
+                .add(ModBlocks.FORGE.get(), Blocks.BLUE_ICE);
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.WYSTERIUM_BLOCK.get());
@@ -61,7 +66,19 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(ModTags.Blocks.NEEDS_WYSTERIUM_TOOL)
                 .add(Blocks.BEDROCK);
 
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.MAHOGANY_LOG.get())
+                .add(ModBlocks.MAHOGANY_WOOD.get())
+                .add(ModBlocks.STRIPPED_MAHOGANY_LOG.get())
+                .add(ModBlocks.STRIPPED_MAHOGANY_WOOD.get())
+                .add(ModBlocks.BOREAL_LOG.get())
+                .add(ModBlocks.BOREAL_WOOD.get())
+                .add(ModBlocks.STRIPPED_BOREAL_LOG.get())
+                .add(ModBlocks.STRIPPED_BOREAL_WOOD.get());
 
+        this.tag(BlockTags.PLANKS)
+                .add(ModBlocks.MAHOGANY_PLANKS.get())
+                .add(ModBlocks.BOREAL_PLANKS.get());
 
     }
 }

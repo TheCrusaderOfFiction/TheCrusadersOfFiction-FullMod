@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.wolfygames7237.Crusadersoffiction.CrusadersOfFiction;
 import net.wolfygames7237.Crusadersoffiction.Item.ModItem;
+import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 import net.wolfygames7237.Crusadersoffiction.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,13 +28,27 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItem.WYSTERIUM_LEGGINGS.get(),
                         ModItem.WYSTERIUM_BOOTS.get());
 
-        this.tag(ModTags.Blocks.Items.HAMMER)
+        this.tag(ModTags.Items.HAMMER)
                 .add(ModItem.COPPER_HAMMER.get(),
                         ModItem.IRON_HAMMER.get());
 
         this.tag(ItemTags.AXES)
                 .add(ModItem.ROCK_HATCHET.get());
 
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.MAHOGANY_LOG.get().asItem())
+                .add(ModBlocks.MAHOGANY_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_MAHOGANY_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_MAHOGANY_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlocks.MAHOGANY_PLANKS.get().asItem());
+
+        this.tag(ModTags.Items.MAHOGANY_WOOD)
+                .add(ModBlocks.MAHOGANY_WOOD.get().asItem(),
+                ModBlocks.MAHOGANY_LOG.get().asItem(),
+                ModBlocks.STRIPPED_MAHOGANY_LOG.get().asItem(),
+                ModBlocks.STRIPPED_MAHOGANY_WOOD.get().asItem());
 
     }
 }

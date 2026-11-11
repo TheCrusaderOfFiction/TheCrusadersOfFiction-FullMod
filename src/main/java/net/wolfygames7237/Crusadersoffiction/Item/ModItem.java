@@ -6,8 +6,11 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.wolfygames7237.Crusadersoffiction.Item.custom.GlowingMushroom;
+import net.wolfygames7237.Crusadersoffiction.Item.custom.JungleGrass;
 import net.wolfygames7237.Crusadersoffiction.Item.custom.ModArmorItem;
 import net.wolfygames7237.Crusadersoffiction.Item.structure.*;
+import net.wolfygames7237.Crusadersoffiction.blocks.ModBlocks;
 
 public class ModItem {
     public static final DeferredRegister<Item> ITEMS =
@@ -15,13 +18,8 @@ public class ModItem {
 
     public static final RegistryObject<Item> BLUESHARD = ITEMS.register( "blueshardh",
             () ->new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> WYSTERIUM = ITEMS.register( "wysterium",
-            () ->new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> BLUEARMORSHARD = ITEMS.register( "bluearmorshard",
             () ->new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> BLUEARMORCASING = ITEMS.register( "bluearmorcasing",
             () ->new Item(new Item.Properties()));
 
@@ -29,26 +27,23 @@ public class ModItem {
             () ->new Item(new Item.Properties()));
     public static final RegistryObject<Item> COPPERWIRE = ITEMS.register( "copperwire",
             () ->new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> COPPERNUGGET = ITEMS.register( "coppernugget",
             () ->new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> WYSTERIUM = ITEMS.register( "wysterium",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAWWYSTERIUM = ITEMS.register( "rawwysterium",
+            () ->new Item(new Item.Properties()));
     public static final RegistryObject<Item> WYSTERIUMNUGGET = ITEMS.register( "wysteriumnugget",
+            () ->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OBI_ROD = ITEMS.register( "obi_rod",
             () ->new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SOULESSANCE = ITEMS.register( "soulessance",
             () ->new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> RAINBOWESSANCE = ITEMS.register( "rainbowessance",
             () ->new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> VOIDESSANCE = ITEMS.register( "voidessance",
-            () ->new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> RAWWYSTERIUM = ITEMS.register( "rawwysterium",
-            () ->new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> OBI_ROD = ITEMS.register( "obi_rod",
             () ->new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> COPPER_HAMMER = ITEMS.register( "copper_hammer",
@@ -80,7 +75,6 @@ public class ModItem {
 
     public static final RegistryObject<Item> ROCK = ITEMS.register( "rock",
             () ->new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> ROCK_HATCHET = ITEMS.register( "rock_hatchet",
             () ->new AxeItem(Tiers.WOOD,1,1, new Item.Properties()));
     public static final RegistryObject<Item> FIBER = ITEMS.register( "fiber",
@@ -98,15 +92,15 @@ public class ModItem {
             () ->new HoeItem(ModToolTiers.WYSTERIUM, 0, 20, new Item.Properties()));
 
     public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register( "copper_sword",
-            () ->new SwordItem(ModToolTiers.COPPER, 5, 2, new Item.Properties()));
+            () ->new SwordItem(ModToolTiers.COPPER, 3, -2.4F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register( "copper_pickaxe",
-            () ->new PickaxeItem(ModToolTiers.COPPER, 3, 1, new Item.Properties()));
+            () ->new PickaxeItem(ModToolTiers.COPPER, 1, -2.8F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_AXE = ITEMS.register( "copper_axe",
-            () ->new AxeItem(ModToolTiers.COPPER, 7, 1, new Item.Properties()));
+            () ->new AxeItem(ModToolTiers.COPPER, 7, -3.2F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register( "copper_shovel",
-            () ->new ShovelItem(ModToolTiers.COPPER, 3, 1, new Item.Properties()));
+            () ->new ShovelItem(ModToolTiers.COPPER, 1.5F, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register( "copper_hoe",
-            () ->new HoeItem(ModToolTiers.COPPER, 0, 2, new Item.Properties()));
+            () ->new HoeItem(ModToolTiers.COPPER, -1, -2.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> WYSTERIUM_HELMET = ITEMS.register("wysterium_helmet",
             () -> new ModArmorItem(ModArmorMaterials.WYSTERIUM, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -138,6 +132,10 @@ public class ModItem {
     public static final RegistryObject<Item> MAGMA_FARM_STRUCTURE = ITEMS.register("magma_farm_structure",
             () -> new MagmafarmCompressedPlacerCenteredItem(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> JUNGLE_SEEDS = ITEMS.register( "jungle_seeds",
+            () ->new JungleGrass(new Item.Properties()));
+    public static final RegistryObject<Item> MUSHROOM_SEEDS = ITEMS.register( "mushroom_seeds",
+            () ->new GlowingMushroom(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

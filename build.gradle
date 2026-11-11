@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
-    id 'org.spongepowered.mixin' version '0.7.+'
+    id 'org.spongepowered.mixin' version '0.7-SNAPSHOT' apply true
 }
 repositories {
     mavenCentral()
@@ -15,12 +15,15 @@ repositories {
             includeGroup "dev.latvian.apps"
         }
     }
-
+    maven { url = 'https://maven.minecraftforge.net/' }
     maven {
         url "https://jitpack.io"
         content {
             includeGroup "com.github.rtyley"
         }
+    }
+    flatDir {
+        dir 'libs'
     }
 
 
@@ -29,7 +32,6 @@ repositories {
 dependencies {
     implementation 'xyz.jpenilla:reflection-remapper:0.1.2'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
 }
 
 mixin {
@@ -133,6 +135,7 @@ minecraft {
         data {
             // example of overriding the workingDirectory set in configureEach above
             workingDirectory project.file('run-data')
+            property 'crusadersoffiction.datagen', 'true'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
@@ -172,9 +175,9 @@ repositories {
     }
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
-    // flatDir {
-    //     dir 'libs'
-    // }
+     flatDir {
+         dir 'libs'
+     }
 }
 
 dependencies {
@@ -217,7 +220,7 @@ tasks.named('processResources', ProcessResources).configure {
             forge_version: forge_version, forge_version_range: forge_version_range,
             loader_version_range: loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-            mod_authors: mod_authors, mod_description: mod_description,
+            mod_authors: mod_authors, mod_description: mod_description
     ]
     inputs.properties replaceProperties
 

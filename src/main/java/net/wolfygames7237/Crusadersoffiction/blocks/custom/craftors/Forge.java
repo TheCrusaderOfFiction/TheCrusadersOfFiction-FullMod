@@ -1,4 +1,4 @@
-package net.wolfygames7237.Crusadersoffiction.blocks.custom;
+package net.wolfygames7237.Crusadersoffiction.blocks.custom.craftors;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;

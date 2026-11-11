@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,6 +30,7 @@ public class ModBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_END),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.END_WYSTERIUM_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
+
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

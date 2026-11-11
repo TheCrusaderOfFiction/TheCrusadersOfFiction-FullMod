@@ -23,13 +23,13 @@ public class ModToolTiers {
             new ResourceLocation("crusadersoffiction", "wood"),
             List.of(), List.of());
     public static final Tier MOD_STONE = TierSortingRegistry.registerTier(
-            new ForgeTier(2, 250, 6.0F, 2.0F, 14,
+            new ForgeTier(2, 131, 4.0F, 1.0F, 5,
                     BlockTags.NEEDS_STONE_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)),
             new ResourceLocation("crusadersoffiction", "stone"),
             List.of(Tiers.WOOD), List.of());
     public static final Tier COPPER = TierSortingRegistry.registerTier(
-            new ForgeTier(3, 59, 2.0F, 0.0F, 15,
-                    ModTags.Blocks.NEEDS_COPPER_TOOL, () -> Ingredient.of(ItemTags.PLANKS)),
+            new ForgeTier(3, 131, 4.0F, 1.0F, 5,
+                    ModTags.Blocks.NEEDS_COPPER_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)),
             new ResourceLocation("crusadersoffiction", "copper"),
             List.of(Tiers.STONE), List.of());
     public static final Tier MOD_IRON = TierSortingRegistry.registerTier(
@@ -43,7 +43,7 @@ public class ModToolTiers {
             new ResourceLocation("crusadersoffiction", "diamond"),
             List.of(Tiers.IRON), List.of());
     public static final Tier WYSTERIUM = TierSortingRegistry.registerTier(
-            new ForgeTier(6,20000,5f,5f,1,
+            new ForgeTier(6,20000,10.0f,5.0f,1,
                     ModTags.Blocks.NEEDS_WYSTERIUM_TOOL, () -> Ingredient.of(ModItem.WYSTERIUM.get())),
             new ResourceLocation(CrusadersOfFiction.MOD_ID, "wysterium"), List.of(Tiers.NETHERITE), List.of());
 

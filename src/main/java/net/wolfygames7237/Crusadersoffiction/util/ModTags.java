@@ -15,18 +15,21 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_WOOD_TOOL = tag("needs_wood_tool");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
 
+
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(CrusadersOfFiction.MOD_ID, name));
         }
+    }
 
         public static class Items {
 
             public static final TagKey<Item> HAMMER = tag("hammer");
+            public static final TagKey<Item> MAHOGANY_WOOD = tag("mahogany_wood");
 
             private static TagKey<Item> tag(String name) {
                 return ItemTags.create(new ResourceLocation(CrusadersOfFiction.MOD_ID, name));
             }
 
-        }
+
     }
 }

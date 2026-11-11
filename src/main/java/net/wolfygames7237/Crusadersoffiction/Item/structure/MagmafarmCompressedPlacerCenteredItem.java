@@ -66,7 +66,7 @@ public class MagmafarmCompressedPlacerCenteredItem extends Item implements IComp
 
     private boolean canPlaceStructure(ServerLevel level, BlockPos origin) {
         StructureTemplateManager structureManager = level.getStructureManager();
-        ResourceLocation structureId = new ResourceLocation("crusadersoffiction", "compressed_64mobfarm");
+        ResourceLocation structureId = new ResourceLocation("crusadersoffiction", "compressed_64magmafarm");
         Optional<StructureTemplate> templateOpt = structureManager.get(structureId);
         if (templateOpt.isEmpty()) return false;
 
@@ -83,7 +83,7 @@ public class MagmafarmCompressedPlacerCenteredItem extends Item implements IComp
 
     private void placeStructure(ServerLevel level, BlockPos origin, Player player) {
         StructureTemplateManager structureManager = level.getStructureManager();
-        ResourceLocation structureId = new ResourceLocation("crusadersoffiction", "compressed_64mobfarm");
+        ResourceLocation structureId = new ResourceLocation("crusadersoffiction", "compressed_64magmafarm");
         Optional<StructureTemplate> templateOpt = structureManager.get(structureId);
         if (templateOpt.isEmpty()) return;
 

@@ -108,9 +108,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         itemItem(ModItem.MAGMA_FARM_STRUCTURE, Items.MAGMA_CREAM);
         blockItem(ModItem.BED_PLACER, Blocks.WHITE_WOOL);
 
-
         generatePlacerModels();
+
+        saplingItem(ModBlocks.MAHOGANY_SAPLING);
+        saplingItem(ModBlocks.BOREAL_SAPLING);
+        simpleItem(ModItem.JUNGLE_SEEDS);
+        simpleItem(ModItem.MUSHROOM_SEEDS);
+
+        withExistingParent("glowing_mushroom",
+                modLoc("block/glowing_mushroom"));
+        withExistingParent("jungle_grass",
+                modLoc("block/jungle_grass"));
     }
+
+
     private void generatePlacerModels() {
         // Loop through all your ModItems
         ModItem.ITEMS.getEntries().stream()
@@ -267,5 +278,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         );
     }
 
-
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(CrusadersOfFiction.MOD_ID,"block/" + item.getId().getPath()));
+    }
 }

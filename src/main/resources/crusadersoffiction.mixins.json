@@ -4,7 +4,11 @@
   "package": "net.wolfygames7237.Crusadersoffiction.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "TieredItemMixin"
+    "TieredItemMixin",
+    "OverworldBiomeBuilderMixin",
+    "NoiseGeneratorSettingsMixin",
+    "MultiNoiseBiomeSourceMixin",
+    "LevelChunkSectionBiomeAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,4 +1,4 @@
-package net.wolfygames7237.Crusadersoffiction.blocks.custom;
+package net.wolfygames7237.Crusadersoffiction.blocks.custom.craftors;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,11 +17,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import net.wolfygames7237.Crusadersoffiction.blocks.entity.StructureBuilderBlockEntity;

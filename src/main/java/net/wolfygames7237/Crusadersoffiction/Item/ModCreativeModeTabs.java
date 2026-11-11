@@ -42,6 +42,36 @@ public class ModCreativeModeTabs {
                         output.accept(ModItem.SOULESSANCE.get());
                         output.accept(ModItem.RAINBOWESSANCE.get());
                         output.accept(ModItem.VOIDESSANCE.get());
+                        output.accept(ModBlocks.MAHOGANY_LOG.get());
+                        output.accept(ModBlocks.MAHOGANY_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_MAHOGANY_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_MAHOGANY_WOOD.get());
+                        output.accept(ModBlocks.MAHOGANY_PLANKS.get());
+                        output.accept(ModBlocks.MAHOGANY_SAPLING.get());
+                        output.accept(ModBlocks.MAHOGANY_LEAVES.get());
+
+                        output.accept(ModBlocks.BOREAL_LOG.get());
+                        output.accept(ModBlocks.BOREAL_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_BOREAL_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_BOREAL_WOOD.get());
+                        output.accept(ModBlocks.BOREAL_PLANKS.get());
+                        output.accept(ModBlocks.BOREAL_SAPLING.get());
+                        output.accept(ModBlocks.BOREAL_LEAVES.get());
+
+                        output.accept(ModBlocks.JUNGLE_GRASS.get());
+                        output.accept(ModBlocks.JUNGLE_GRASS_BLOCK.get());
+                        output.accept(ModItem.JUNGLE_SEEDS.get());
+                        output.accept(ModBlocks.GLOWING_MUSHROOM.get());
+                        output.accept(ModBlocks.GLOWING_MUSHROOM_BLOCK.get());
+                        output.accept(ModItem.MUSHROOM_SEEDS.get());
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> Craftable_Structures = CREATIVE_MODE_TABS.register("craftable_structures",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.STRUCTURE_BUILDER.get()))
+                    .title(Component.translatable("creativetab.craftable_structures"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
                         output.accept(ModItem.COBBLESTONE_PLACER.get());
                         output.accept(ModItem.MAGMA_BLOCK_PLACER.get());
                         output.accept(ModItem.BED_PLACER.get());
